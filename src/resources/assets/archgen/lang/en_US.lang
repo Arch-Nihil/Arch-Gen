@@ -46,6 +46,22 @@ AlkaliFeldsparBrickSmall.name=Small Alkali Feldspar Brick
 AlkaliFeldsparBrickMedium.name=Alkali Feldspar Brick
 AlkaliFeldsparBrickLarge.name=Large Alkali Feldspar Brick
 
+PlagioclaseDustTiny.name=Tiny Plagioclase Dust
+PlagioclaseDustSmall.name=Small Plagioclase Dust
+PlagioclaseDustMedium.name=Plagioclase Dust
+PlagioclaseDustLarge.name=Large Plagioclase Dust
+PlagioclaseDustHuge.name=Huge Plagioclase Dust
+
+PlagioclaseChunkTiny.name=Tiny Plagioclase Chunk
+PlagioclaseChunkSmall.name=Small Plagioclase Chunk
+PlagioclaseChunkMedium.name=Plagioclase Chunk
+PlagioclaseChunkLarge.name=Large Plagioclase Chunk
+PlagioclaseChunkHuge.name=Huge Plagioclase Chunk
+
+PlagioclaseBrickSmall.name=Small Plagioclase Brick
+PlagioclaseBrickMedium.name=Plagioclase Brick
+PlagioclaseBrickLarge.name=Large Plagioclase Brick
+
 GraniteStone-0.name=Raw Granite
 GraniteStone-1.name=Raw Granite
 GraniteStone-2.name=Raw Granite
@@ -62,12 +78,16 @@ AlkaliFeldsparBricksSmall.name=Small Alkali Feldspar Bricks
 AlkaliFeldsparBricksMedium.name=Alkali Feldspar Bricks
 AlkaliFeldsparBricksLarge.name=Large Alkali Feldspar Bricks
 
-itemGroup.DustTab=Dusts
+PlagioclaseBricksSmall.name=Small Plagioclase Bricks
+PlagioclaseBricksMedium.name=Plagioclase Bricks
+PlagioclaseBricksLarge.name=Large Plagioclase Bricks
 
-itemGroup.ChunkTab=Chunks
+itemGroup.DustTab=Arch-Gen : Dusts
 
-itemGroup.BrickTab=Bricks
+itemGroup.ChunkTab=Arch-Gen : Chunks
 
-itemGroup.BricksTab=Bricks
+itemGroup.BrickTab=Arch-Gen : Bricks
 
-itemGroup.StoneTab=Raw Stones
+itemGroup.BricksTab=Arch-Gen : Bricks
+
+itemGroup.StoneTab=Arch-Gen : Raw Stones

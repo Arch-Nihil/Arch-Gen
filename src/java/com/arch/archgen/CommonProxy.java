@@ -5,6 +5,7 @@ import com.arch.archgen.config.Config;
 import com.arch.archgen.items.ItemsRegistry;
 import com.arch.archgen.recipes.Crafting;
 import com.arch.archgen.recipes.Smelting;
+import com.arch.archgen.tabs.Tabs;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -14,8 +15,10 @@ public class CommonProxy {
 	
     public void preInit(FMLPreInitializationEvent e) {
     	Config.init(e);
+    	Tabs.preInit();
     	ItemsRegistry.init();
     	BlocksRegistry.init();
+    	Tabs.postInit();
     }
 
     public void init(FMLInitializationEvent e) {
