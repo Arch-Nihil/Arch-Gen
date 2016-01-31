@@ -1,0 +1,73 @@
+GraniteDustTiny.name=Tiny Granite Dust
+GraniteDustSmall.name=Small Granite Dust
+GraniteDustMedium.name=Granite Dust
+GraniteDustLarge.name=Large Granite Dust
+GraniteDustHuge.name=Huge Granite Dust
+
+GraniteChunkTiny.name=Tiny Granite Chunk
+GraniteChunkSmall.name=Small Granite Chunk
+GraniteChunkMedium.name=Granite Chunk
+GraniteChunkLarge.name=Large Granite Chunk
+GraniteChunkHuge.name=Huge Granite Chunk
+
+GraniteBrickSmall.name=Small Granite Brick
+GraniteBrickMedium.name=Granite Brick
+GraniteBrickLarge.name=Large Granite Brick
+
+QuartzDustTiny.name=Tiny Quartz Dust
+QuartzDustSmall.name=Small Quartz Dust
+QuartzDustMedium.name=Quartz Dust
+QuartzDustLarge.name=Large Quartz Dust
+QuartzDustHuge.name=Huge Quartz Dust
+
+QuartzChunkTiny.name=Tiny Quartz Chunk
+QuartzChunkSmall.name=Small Quartz Chunk
+QuartzChunkMedium.name=Quartz Chunk
+QuartzChunkLarge.name=Large Quartz Chunk
+QuartzChunkHuge.name=Huge Quartz Chunk
+
+QuartzBrickSmall.name=Small Quartz Brick
+QuartzBrickMedium.name=Quartz Brick
+QuartzBrickLarge.name=Large Quartz Brick
+
+AlkaliFeldsparDustTiny.name=Tiny Alkali Feldspar Dust
+AlkaliFeldsparDustSmall.name=Small Alkali Feldspar Dust
+AlkaliFeldsparDustMedium.name=Alkali Feldspar Dust
+AlkaliFeldsparDustLarge.name=Large Alkali Feldspar Dust
+AlkaliFeldsparDustHuge.name=Huge Alkali Feldspar Dust
+
+AlkaliFeldsparChunkTiny.name=Tiny Alkali Feldspar Chunk
+AlkaliFeldsparChunkSmall.name=Small Alkali Feldspar Chunk
+AlkaliFeldsparChunkMedium.name=Alkali Feldspar Chunk
+AlkaliFeldsparChunkLarge.name=Large Alkali Feldspar Chunk
+AlkaliFeldsparChunkHuge.name=Huge Alkali Feldspar Chunk
+
+AlkaliFeldsparBrickSmall.name=Small Alkali Feldspar Brick
+AlkaliFeldsparBrickMedium.name=Alkali Feldspar Brick
+AlkaliFeldsparBrickLarge.name=Large Alkali Feldspar Brick
+
+GraniteStone-0.name=Raw Granite
+GraniteStone-1.name=Raw Granite
+GraniteStone-2.name=Raw Granite
+
+GraniteBricksSmall.name=Small Granite Bricks
+GraniteBricksMedium.name=Granite Bricks
+GraniteBricksLarge.name=Large Granite Bricks
+
+QuartzBricksSmall.name=Small Quartz Bricks
+QuartzBricksMedium.name=Quartz Bricks
+QuartzBricksLarge.name=Large Quartz Bricks
+
+AlkaliFeldsparBricksSmall.name=Small Alkali Feldspar Bricks
+AlkaliFeldsparBricksMedium.name=Alkali Feldspar Bricks
+AlkaliFeldsparBricksLarge.name=Large Alkali Feldspar Bricks
+
+itemGroup.DustTab=Dusts
+
+itemGroup.ChunkTab=Chunks
+
+itemGroup.BrickTab=Bricks
+
+itemGroup.BricksTab=Bricks
+
+itemGroup.StoneTab=Raw Stones
