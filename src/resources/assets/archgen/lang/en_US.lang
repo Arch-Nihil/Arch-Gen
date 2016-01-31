@@ -62,6 +62,22 @@ PlagioclaseBrickSmall.name=Small Plagioclase Brick
 PlagioclaseBrickMedium.name=Plagioclase Brick
 PlagioclaseBrickLarge.name=Large Plagioclase Brick
 
+HornblendeDustTiny.name=Tiny Hornblende Dust
+HornblendeDustSmall.name=Small Hornblende Dust
+HornblendeDustMedium.name=Hornblende Dust
+HornblendeDustLarge.name=Large Hornblende Dust
+HornblendeDustHuge.name=Huge Hornblende Dust
+
+HornblendeChunkTiny.name=Tiny Hornblende Chunk
+HornblendeChunkSmall.name=Small Hornblende Chunk
+HornblendeChunkMedium.name=Hornblende Chunk
+HornblendeChunkLarge.name=Large Hornblende Chunk
+HornblendeChunkHuge.name=Huge Hornblende Chunk
+
+HornblendeBrickSmall.name=Small Hornblende Brick
+HornblendeBrickMedium.name=Hornblende Brick
+HornblendeBrickLarge.name=Large Hornblende Brick
+
 GraniteStone-0.name=Raw Granite
 GraniteStone-1.name=Raw Granite
 GraniteStone-2.name=Raw Granite
@@ -81,6 +97,10 @@ AlkaliFeldsparBricksLarge.name=Large Alkali Feldspar Bricks
 PlagioclaseBricksSmall.name=Small Plagioclase Bricks
 PlagioclaseBricksMedium.name=Plagioclase Bricks
 PlagioclaseBricksLarge.name=Large Plagioclase Bricks
+
+HornblendeBricksSmall.name=Small Hornblende Bricks
+HornblendeBricksMedium.name=Hornblende Bricks
+HornblendeBricksLarge.name=Large Hornblende Bricks
 
 itemGroup.DustTab=Arch-Gen : Dusts
 
