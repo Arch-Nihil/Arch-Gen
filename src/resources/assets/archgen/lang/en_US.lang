@@ -14,6 +14,38 @@ GraniteBrickSmall.name=Small Granite Brick
 GraniteBrickMedium.name=Granite Brick
 GraniteBrickLarge.name=Large Granite Brick
 
+BasaltDustTiny.name=Tiny Basalt Dust
+BasaltDustSmall.name=Small Basalt Dust
+BasaltDustMedium.name=Basalt Dust
+BasaltDustLarge.name=Large Basalt Dust
+BasaltDustHuge.name=Huge Basalt Dust
+
+BasaltChunkTiny.name=Tiny Basalt Chunk
+BasaltChunkSmall.name=Small Basalt Chunk
+BasaltChunkMedium.name=Basalt Chunk
+BasaltChunkLarge.name=Large Basalt Chunk
+BasaltChunkHuge.name=Huge Basalt Chunk
+
+BasaltBrickSmall.name=Small Basalt Brick
+BasaltBrickMedium.name=Basalt Brick
+BasaltBrickLarge.name=Large Basalt Brick
+
+GabbroDustTiny.name=Tiny Gabbro Dust
+GabbroDustSmall.name=Small Gabbro Dust
+GabbroDustMedium.name=Gabbro Dust
+GabbroDustLarge.name=Large Gabbro Dust
+GabbroDustHuge.name=Huge Gabbro Dust
+
+GabbroChunkTiny.name=Tiny Gabbro Chunk
+GabbroChunkSmall.name=Small Gabbro Chunk
+GabbroChunkMedium.name=Gabbro Chunk
+GabbroChunkLarge.name=Large Gabbro Chunk
+GabbroChunkHuge.name=Huge Gabbro Chunk
+
+GabbroBrickSmall.name=Small Gabbro Brick
+GabbroBrickMedium.name=Gabbro Brick
+GabbroBrickLarge.name=Large Gabbro Brick
+
 QuartzDustTiny.name=Tiny Quartz Dust
 QuartzDustSmall.name=Small Quartz Dust
 QuartzDustMedium.name=Quartz Dust
@@ -85,6 +117,22 @@ GraniteStone-2.name=Raw Granite
 GraniteBricksSmall.name=Small Granite Bricks
 GraniteBricksMedium.name=Granite Bricks
 GraniteBricksLarge.name=Large Granite Bricks
+
+BasaltStone-0.name=Raw Basalt
+BasaltStone-1.name=Raw Basalt
+BasaltStone-2.name=Raw Basalt
+
+BasaltBricksSmall.name=Small Basalt Bricks
+BasaltBricksMedium.name=Basalt Bricks
+BasaltBricksLarge.name=Large Basalt Bricks
+
+GabbroStone-0.name=Raw Gabbro
+GabbroStone-1.name=Raw Gabbro
+GabbroStone-2.name=Raw Gabbro
+
+GabbroBricksSmall.name=Small Gabbro Bricks
+GabbroBricksMedium.name=Gabbro Bricks
+GabbroBricksLarge.name=Large Gabbro Bricks
 
 QuartzBricksSmall.name=Small Quartz Bricks
 QuartzBricksMedium.name=Quartz Bricks
