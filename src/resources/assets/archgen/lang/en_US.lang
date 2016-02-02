@@ -46,6 +46,22 @@ GabbroBrickSmall.name=Small Gabbro Brick
 GabbroBrickMedium.name=Gabbro Brick
 GabbroBrickLarge.name=Large Gabbro Brick
 
+MudstoneDustTiny.name=Tiny Mudstone Dust
+MudstoneDustSmall.name=Small Mudstone Dust
+MudstoneDustMedium.name=Mudstone Dust
+MudstoneDustLarge.name=Large Mudstone Dust
+MudstoneDustHuge.name=Huge Mudstone Dust
+
+MudstoneChunkTiny.name=Tiny Mudstone Chunk
+MudstoneChunkSmall.name=Small Mudstone Chunk
+MudstoneChunkMedium.name=Mudstone Chunk
+MudstoneChunkLarge.name=Large Mudstone Chunk
+MudstoneChunkHuge.name=Huge Mudstone Chunk
+
+MudstoneBrickSmall.name=Small Mudstone Brick
+MudstoneBrickMedium.name=Mudstone Brick
+MudstoneBrickLarge.name=Large Mudstone Brick
+
 QuartzDustTiny.name=Tiny Quartz Dust
 QuartzDustSmall.name=Small Quartz Dust
 QuartzDustMedium.name=Quartz Dust
@@ -133,6 +149,14 @@ GabbroStone-2.name=Raw Gabbro
 GabbroBricksSmall.name=Small Gabbro Bricks
 GabbroBricksMedium.name=Gabbro Bricks
 GabbroBricksLarge.name=Large Gabbro Bricks
+
+MudstoneStone-0.name=Raw Mudstone
+MudstoneStone-1.name=Raw Mudstone
+MudstoneStone-2.name=Raw Mudstone
+
+MudstoneBricksSmall.name=Small Mudstone Bricks
+MudstoneBricksMedium.name=Mudstone Bricks
+MudstoneBricksLarge.name=Large Mudstone Bricks
 
 QuartzBricksSmall.name=Small Quartz Bricks
 QuartzBricksMedium.name=Quartz Bricks
