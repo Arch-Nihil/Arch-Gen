@@ -17,7 +17,7 @@ public class BlocksRegistry {
 	
 	public static Block graniteBricks, basaltBricks, gabbroBricks;
 	public static Block mudstoneBricks, limestoneBricks;
-	public static Block quartzBricks, alkaliFeldsparBricks, plagioclaseBricks, hornblendeBricks;
+	public static Block quartzBricks, alkaliFeldsparBricks, plagioclaseBricks, hornblendeBricks, calciteBricks;
 	
 	public static void init() {
 		GameRegistry.registerBlock(granite = new IgneousStone("Granite", "Quartz,AlkaliFeldspar,Plagioclase,Hornblende", "9,5,5,3", 10.0F, 10.0F, 2), BasicItemBlocks.class, "Granite");
@@ -25,7 +25,7 @@ public class BlocksRegistry {
 		GameRegistry.registerBlock(gabbro = new IgneousStone("Gabbro", "Plagioclase", "7", 10.0F, 10.0F, 2), BasicItemBlocks.class, "Gabbro");
 		
 		GameRegistry.registerBlock(mudstone = new SedimentaryStone("Mudstone", "Quartz, Orthoclase, AlkaliFeldspar", "9,5,3", 10.0F, 10.0F, 1), BasicItemBlocks.class, "Mudstone");
-		GameRegistry.registerBlock(limestone = new SedimentaryStone("Limestone", "Quartz, Orthoclase", "5,3", 10.0F, 10.0F, 1), BasicItemBlocks.class, "Limestone");
+		GameRegistry.registerBlock(limestone = new SedimentaryStone("Limestone", "Calcite, Quartz, Orthoclase", "11,5,3", 10.0F, 10.0F, 1), BasicItemBlocks.class, "Limestone");
 		
 		if (Config.doGenBricks) {
 			GameRegistry.registerBlock(graniteBricks = new IgneousBricks("Granite", 10.0F, 10.0F, 2), BasicItemBlocks.class, "GraniteBricks");
@@ -39,6 +39,7 @@ public class BlocksRegistry {
 			GameRegistry.registerBlock(alkaliFeldsparBricks = new MineralBricks("AlkaliFeldspar", 10.0F, 10.0F, 2), BasicItemBlocks.class, "AlkaliFeldsparBricks");
 			GameRegistry.registerBlock(plagioclaseBricks = new MineralBricks("Plagioclase", 10.0F, 10.0F, 2), BasicItemBlocks.class, "PlagioclaseBricks");
 			GameRegistry.registerBlock(hornblendeBricks = new MineralBricks("Hornblende", 10.0F, 10.0F, 2), BasicItemBlocks.class, "HornblendeBricks");
+			GameRegistry.registerBlock(calciteBricks = new MineralBricks("Calcite", 10.0F, 10.0F, 2), BasicItemBlocks.class, "CalciteBricks");
 		}
 	}
 }

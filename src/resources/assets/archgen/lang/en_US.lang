@@ -142,6 +142,22 @@ HornblendeBrickSmall.name=Small Hornblende Brick
 HornblendeBrickMedium.name=Hornblende Brick
 HornblendeBrickLarge.name=Large Hornblende Brick
 
+CalciteDustTiny.name=Tiny Calcite Dust
+CalciteDustSmall.name=Small Calcite Dust
+CalciteDustMedium.name=Calcite Dust
+CalciteDustLarge.name=Large Calcite Dust
+CalciteDustHuge.name=Huge Calcite Dust
+
+CalciteChunkTiny.name=Tiny Calcite Chunk
+CalciteChunkSmall.name=Small Calcite Chunk
+CalciteChunkMedium.name=Calcite Chunk
+CalciteChunkLarge.name=Large Calcite Chunk
+CalciteChunkHuge.name=Huge Calcite Chunk
+
+CalciteBrickSmall.name=Small Calcite Brick
+CalciteBrickMedium.name=Calcite Brick
+CalciteBrickLarge.name=Large Calcite Brick
+
 GraniteStone-0.name=Raw Granite
 GraniteStone-1.name=Raw Granite
 GraniteStone-2.name=Raw Granite
@@ -197,6 +213,10 @@ PlagioclaseBricksLarge.name=Large Plagioclase Bricks
 HornblendeBricksSmall.name=Small Hornblende Bricks
 HornblendeBricksMedium.name=Hornblende Bricks
 HornblendeBricksLarge.name=Large Hornblende Bricks
+
+CalciteBricksSmall.name=Small Calcite Bricks
+CalciteBricksMedium.name=Calcite Bricks
+CalciteBricksLarge.name=Large Calcite Bricks
 
 itemGroup.DustTab=Arch-Gen : Dusts
 itemGroup.ChunkTab=Arch-Gen : Chunks
