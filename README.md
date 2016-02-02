@@ -1,2 +1,2 @@
 # Arch-Gen
-My new oregen mod. Just wait. You'll see.
+The beginning of a new oregen mod. Requires Custom Ore Gen.
