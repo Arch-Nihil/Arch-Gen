@@ -62,6 +62,22 @@ MudstoneBrickSmall.name=Small Mudstone Brick
 MudstoneBrickMedium.name=Mudstone Brick
 MudstoneBrickLarge.name=Large Mudstone Brick
 
+LimestoneDustTiny.name=Tiny Limestone Dust
+LimestoneDustSmall.name=Small Limestone Dust
+LimestoneDustMedium.name=Limestone Dust
+LimestoneDustLarge.name=Large Limestone Dust
+LimestoneDustHuge.name=Huge Limestone Dust
+
+LimestoneChunkTiny.name=Tiny Limestone Chunk
+LimestoneChunkSmall.name=Small Limestone Chunk
+LimestoneChunkMedium.name=Limestone Chunk
+LimestoneChunkLarge.name=Large Limestone Chunk
+LimestoneChunkHuge.name=Huge Limestone Chunk
+
+LimestoneBrickSmall.name=Small Limestone Brick
+LimestoneBrickMedium.name=Limestone Brick
+LimestoneBrickLarge.name=Large Limestone Brick
+
 QuartzDustTiny.name=Tiny Quartz Dust
 QuartzDustSmall.name=Small Quartz Dust
 QuartzDustMedium.name=Quartz Dust
@@ -158,6 +174,14 @@ MudstoneBricksSmall.name=Small Mudstone Bricks
 MudstoneBricksMedium.name=Mudstone Bricks
 MudstoneBricksLarge.name=Large Mudstone Bricks
 
+LimestoneStone-0.name=Raw Limestone
+LimestoneStone-1.name=Raw Limestone
+LimestoneStone-2.name=Raw Limestone
+
+LimestoneBricksSmall.name=Small Limestone Bricks
+LimestoneBricksMedium.name=Limestone Bricks
+LimestoneBricksLarge.name=Large Limestone Bricks
+
 QuartzBricksSmall.name=Small Quartz Bricks
 QuartzBricksMedium.name=Quartz Bricks
 QuartzBricksLarge.name=Large Quartz Bricks
@@ -175,11 +199,7 @@ HornblendeBricksMedium.name=Hornblende Bricks
 HornblendeBricksLarge.name=Large Hornblende Bricks
 
 itemGroup.DustTab=Arch-Gen : Dusts
-
 itemGroup.ChunkTab=Arch-Gen : Chunks
-
 itemGroup.BrickTab=Arch-Gen : Bricks
-
 itemGroup.BricksTab=Arch-Gen : Bricks
-
 itemGroup.StoneTab=Arch-Gen : Raw Stones

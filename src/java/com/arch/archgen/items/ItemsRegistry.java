@@ -17,15 +17,15 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class ItemsRegistry {
 
 	public static Item graniteDust, basaltDust, gabbroDust;
-	public static Item mudstoneDust;
+	public static Item mudstoneDust, limestoneDust;
 	public static Item quartzDust, alkaliFeldsparDust, plagioclaseDust, hornblendeDust;
 	
 	public static Item graniteChunk, basaltChunk, gabbroChunk;
-	public static Item mudstoneChunk;
+	public static Item mudstoneChunk, limestoneChunk;
 	public static Item quartzChunk, alkaliFeldsparChunk, plagioclaseChunk, hornblendeChunk;
 	
 	public static Item graniteBrick, basaltBrick, gabbroBrick;
-	public static Item mudstoneBrick;
+	public static Item mudstoneBrick, limestoneBrick;
 	public static Item quartzBrick, alkaliFeldsparBrick, plagioclaseBrick, hornblendeBrick;
 	
 	public static void init() {
@@ -34,6 +34,7 @@ public class ItemsRegistry {
 		GameRegistry.registerItem(gabbroDust = new IgneousDust("Gabbro"), "GabbroDust");
 		
 		GameRegistry.registerItem(mudstoneDust = new SedimentaryDust("Mudstone"), "MudstoneDust");
+		GameRegistry.registerItem(limestoneDust = new SedimentaryDust("Limestone"), "LimestoneDust");
 		
 		GameRegistry.registerItem(quartzDust = new MineralDust("Quartz"), "QuartzDust");
 		GameRegistry.registerItem(alkaliFeldsparDust = new MineralDust("AlkaliFeldspar"), "AlkaliFeldsparDust");
@@ -45,6 +46,7 @@ public class ItemsRegistry {
 		GameRegistry.registerItem(gabbroChunk = new IgneousChunk("Gabbro"), "GabbroChunk");
 		
 		GameRegistry.registerItem(mudstoneChunk = new SedimentaryChunk("Mudstone"), "MudstoneChunk");
+		GameRegistry.registerItem(limestoneChunk = new SedimentaryChunk("Limestone"), "LimestoneChunk");
 		
 		GameRegistry.registerItem(quartzChunk = new MineralChunk("Quartz"), "QuartzChunk");
 		GameRegistry.registerItem(alkaliFeldsparChunk = new MineralChunk("AlkaliFeldspar"), "AlkaliFeldsparChunk");
@@ -57,6 +59,7 @@ public class ItemsRegistry {
 			GameRegistry.registerItem(gabbroBrick = new IgneousBrick("Gabbro"), "GabbroBrick");
 			
 			GameRegistry.registerItem(mudstoneBrick = new SedimentaryBrick("Mudstone"), "MudstoneBrick");
+			GameRegistry.registerItem(limestoneBrick = new SedimentaryBrick("Limestone"), "LimestoneBrick");
 			
 			GameRegistry.registerItem(quartzBrick = new MineralBrick("Quartz"), "QuartzBrick");
 			GameRegistry.registerItem(alkaliFeldsparBrick = new MineralBrick("AlkaliFeldspar"), "AlkaliFeldsparBrick");

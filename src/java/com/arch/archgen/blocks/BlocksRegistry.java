@@ -13,10 +13,10 @@ import net.minecraft.block.Block;
 public class BlocksRegistry {
 	
 	public static Block granite, basalt, gabbro;
-	public static Block mudstone;
+	public static Block mudstone, limestone;
 	
 	public static Block graniteBricks, basaltBricks, gabbroBricks;
-	public static Block mudstoneBricks;
+	public static Block mudstoneBricks, limestoneBricks;
 	public static Block quartzBricks, alkaliFeldsparBricks, plagioclaseBricks, hornblendeBricks;
 	
 	public static void init() {
@@ -25,6 +25,7 @@ public class BlocksRegistry {
 		GameRegistry.registerBlock(gabbro = new IgneousStone("Gabbro", "Plagioclase", "7", 10.0F, 10.0F, 2), BasicItemBlocks.class, "Gabbro");
 		
 		GameRegistry.registerBlock(mudstone = new SedimentaryStone("Mudstone", "Quartz, Orthoclase, AlkaliFeldspar", "9,5,3", 10.0F, 10.0F, 1), BasicItemBlocks.class, "Mudstone");
+		GameRegistry.registerBlock(limestone = new SedimentaryStone("Limestone", "Quartz, Orthoclase", "5,3", 10.0F, 10.0F, 1), BasicItemBlocks.class, "Limestone");
 		
 		if (Config.doGenBricks) {
 			GameRegistry.registerBlock(graniteBricks = new IgneousBricks("Granite", 10.0F, 10.0F, 2), BasicItemBlocks.class, "GraniteBricks");
@@ -32,6 +33,7 @@ public class BlocksRegistry {
 			GameRegistry.registerBlock(gabbroBricks = new IgneousBricks("Gabbro", 10.0F, 10.0F, 2), BasicItemBlocks.class, "GabbroBricks");
 			
 			GameRegistry.registerBlock(mudstoneBricks = new SedimentaryBricks("Mudstone", 10.0F, 10.0F, 2), BasicItemBlocks.class, "MudstoneBricks");
+			GameRegistry.registerBlock(limestoneBricks = new SedimentaryBricks("Limestone", 10.0F, 10.0F, 2), BasicItemBlocks.class, "LimestoneBricks");
 			
 			GameRegistry.registerBlock(quartzBricks = new MineralBricks("Quartz", 10.0F, 10.0F, 2), BasicItemBlocks.class, "QuartzBricks");
 			GameRegistry.registerBlock(alkaliFeldsparBricks = new MineralBricks("AlkaliFeldspar", 10.0F, 10.0F, 2), BasicItemBlocks.class, "AlkaliFeldsparBricks");

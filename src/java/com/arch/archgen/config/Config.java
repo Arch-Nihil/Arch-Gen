@@ -21,7 +21,7 @@ public class Config {
 		doGenBricks = genBricks.getBoolean();
 		
 		Property genMachines = bConfig.get(Configuration.CATEGORY_GENERAL, "GenerateMachines", true);
-		genBricks.comment = "Should the mod generate its machines to process the many stones and minerals available ?";
+		genMachines.comment = "Should the mod generate its machines to process the many stones and minerals available ?";
 		doGenMachines = genMachines.getBoolean();
 		
 		bConfig.save();
