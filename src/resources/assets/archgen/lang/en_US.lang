@@ -46,6 +46,22 @@ GabbroBrickSmall.name=Small Gabbro Brick
 GabbroBrickMedium.name=Gabbro Brick
 GabbroBrickLarge.name=Large Gabbro Brick
 
+DioriteDustTiny.name=Tiny Diorite Dust
+DioriteDustSmall.name=Small Diorite Dust
+DioriteDustMedium.name=Diorite Dust
+DioriteDustLarge.name=Large Diorite Dust
+DioriteDustHuge.name=Huge Diorite Dust
+
+DioriteChunkTiny.name=Tiny Diorite Chunk
+DioriteChunkSmall.name=Small Diorite Chunk
+DioriteChunkMedium.name=Diorite Chunk
+DioriteChunkLarge.name=Large Diorite Chunk
+DioriteChunkHuge.name=Huge Diorite Chunk
+
+DioriteBrickSmall.name=Small Diorite Brick
+DioriteBrickMedium.name=Diorite Brick
+DioriteBrickLarge.name=Large Diorite Brick
+
 MudstoneDustTiny.name=Tiny Mudstone Dust
 MudstoneDustSmall.name=Small Mudstone Dust
 MudstoneDustMedium.name=Mudstone Dust
@@ -181,6 +197,14 @@ GabbroStone-2.name=Raw Gabbro
 GabbroBricksSmall.name=Small Gabbro Bricks
 GabbroBricksMedium.name=Gabbro Bricks
 GabbroBricksLarge.name=Large Gabbro Bricks
+
+DioriteStone-0.name=Raw Diorite
+DioriteStone-1.name=Raw Diorite
+DioriteStone-2.name=Raw Diorite
+
+DioriteBricksSmall.name=Small Diorite Bricks
+DioriteBricksMedium.name=Diorite Bricks
+DioriteBricksLarge.name=Large Diorite Bricks
 
 MudstoneStone-0.name=Raw Mudstone
 MudstoneStone-1.name=Raw Mudstone
