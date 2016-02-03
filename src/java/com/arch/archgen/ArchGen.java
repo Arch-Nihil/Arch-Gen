@@ -25,7 +25,6 @@ public class ArchGen {
     @EventHandler
     public void preInit(FMLPreInitializationEvent e) {
     	proxy.preInit(e);
-    	proxy.getCOGFile();
     }
         
     @EventHandler
