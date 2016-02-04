@@ -17,15 +17,15 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class ItemsRegistry {
 
 	public static Item graniteDust, basaltDust, gabbroDust, dioriteDust;
-	public static Item mudstoneDust, limestoneDust;
+	public static Item mudstoneDust, limestoneDust, sandstoneDust;
 	public static Item quartzDust, alkaliFeldsparDust, plagioclaseDust, hornblendeDust, calciteDust;
 	
 	public static Item graniteChunk, basaltChunk, gabbroChunk, dioriteChunk;
-	public static Item mudstoneChunk, limestoneChunk;
+	public static Item mudstoneChunk, limestoneChunk, sandstoneChunk;
 	public static Item quartzChunk, alkaliFeldsparChunk, plagioclaseChunk, hornblendeChunk, calciteChunk;
 	
 	public static Item graniteBrick, basaltBrick, gabbroBrick, dioriteBrick;
-	public static Item mudstoneBrick, limestoneBrick;
+	public static Item mudstoneBrick, limestoneBrick, sandstoneBrick;
 	public static Item quartzBrick, alkaliFeldsparBrick, plagioclaseBrick, hornblendeBrick, calciteBrick;
 	
 	public static void init() {
@@ -36,6 +36,7 @@ public class ItemsRegistry {
 		
 		GameRegistry.registerItem(mudstoneDust = new SedimentaryDust("Mudstone"), "MudstoneDust");
 		GameRegistry.registerItem(limestoneDust = new SedimentaryDust("Limestone"), "LimestoneDust");
+		GameRegistry.registerItem(sandstoneDust = new SedimentaryDust("Sandstone"), "SandstoneDust");
 		
 		GameRegistry.registerItem(quartzDust = new MineralDust("Quartz"), "QuartzDust");
 		GameRegistry.registerItem(alkaliFeldsparDust = new MineralDust("AlkaliFeldspar"), "AlkaliFeldsparDust");
@@ -50,6 +51,7 @@ public class ItemsRegistry {
 		
 		GameRegistry.registerItem(mudstoneChunk = new SedimentaryChunk("Mudstone"), "MudstoneChunk");
 		GameRegistry.registerItem(limestoneChunk = new SedimentaryChunk("Limestone"), "LimestoneChunk");
+		GameRegistry.registerItem(sandstoneChunk = new SedimentaryChunk("Sandstone"), "SandstoneChunk");
 		
 		GameRegistry.registerItem(quartzChunk = new MineralChunk("Quartz"), "QuartzChunk");
 		GameRegistry.registerItem(alkaliFeldsparChunk = new MineralChunk("AlkaliFeldspar"), "AlkaliFeldsparChunk");
@@ -65,6 +67,7 @@ public class ItemsRegistry {
 			
 			GameRegistry.registerItem(mudstoneBrick = new SedimentaryBrick("Mudstone"), "MudstoneBrick");
 			GameRegistry.registerItem(limestoneBrick = new SedimentaryBrick("Limestone"), "LimestoneBrick");
+			GameRegistry.registerItem(sandstoneBrick = new SedimentaryBrick("Sandstone"), "SandstoneBrick");
 			
 			GameRegistry.registerItem(quartzBrick = new MineralBrick("Quartz"), "QuartzBrick");
 			GameRegistry.registerItem(alkaliFeldsparBrick = new MineralBrick("AlkaliFeldspar"), "AlkaliFeldsparBrick");

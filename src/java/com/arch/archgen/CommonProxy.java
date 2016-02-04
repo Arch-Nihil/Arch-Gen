@@ -18,7 +18,7 @@ public class CommonProxy {
     	Tabs.preInit();
     	ItemsRegistry.init();
     	BlocksRegistry.init();
-    	Tabs.postInit();
+    	Tabs.init();
     	Worldgen.init();
     }
 

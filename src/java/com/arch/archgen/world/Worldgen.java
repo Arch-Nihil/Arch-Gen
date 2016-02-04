@@ -35,7 +35,7 @@ public class Worldgen implements IWorldGenerator {
 						boolean isBSolid = false;
 						for (int j = topBlock[i * 16 + k] - 1; isBSolid == false; j--) {
 							if (!(w.getBlock(chunkX * 16 + i, j, chunkZ * 16 + k).equals(Blocks.water))) {
-								topBlock[i * 16 + k] = j;
+								topBlock[i * 16 + k] = j + 1;
 								isBSolid = true;
 							}
 						}

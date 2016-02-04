@@ -20,7 +20,7 @@ public class Tabs {
 		}
 	}
 	
-	public static void postInit() {
+	public static void init() {
 		tabStone.setTabIcon(Item.getItemFromBlock(BlocksRegistry.granite));
 		tabDust.setTabIcon(ItemsRegistry.graniteDust);
 		tabChunk.setTabIcon(ItemsRegistry.graniteChunk);

@@ -94,6 +94,22 @@ LimestoneBrickSmall.name=Small Limestone Brick
 LimestoneBrickMedium.name=Limestone Brick
 LimestoneBrickLarge.name=Large Limestone Brick
 
+SandstoneDustTiny.name=Tiny Sandstone Dust
+SandstoneDustSmall.name=Small Sandstone Dust
+SandstoneDustMedium.name=Sandstone Dust
+SandstoneDustLarge.name=Large Sandstone Dust
+SandstoneDustHuge.name=Huge Sandstone Dust
+
+SandstoneChunkTiny.name=Tiny Sandstone Chunk
+SandstoneChunkSmall.name=Small Sandstone Chunk
+SandstoneChunkMedium.name=Sandstone Chunk
+SandstoneChunkLarge.name=Large Sandstone Chunk
+SandstoneChunkHuge.name=Huge Sandstone Chunk
+
+SandstoneBrickSmall.name=Small Sandstone Brick
+SandstoneBrickMedium.name=Sandstone Brick
+SandstoneBrickLarge.name=Large Sandstone Brick
+
 QuartzDustTiny.name=Tiny Quartz Dust
 QuartzDustSmall.name=Small Quartz Dust
 QuartzDustMedium.name=Quartz Dust
@@ -221,6 +237,14 @@ LimestoneStone-2.name=Raw Limestone
 LimestoneBricksSmall.name=Small Limestone Bricks
 LimestoneBricksMedium.name=Limestone Bricks
 LimestoneBricksLarge.name=Large Limestone Bricks
+
+SandstoneStone-0.name=Raw Sandstone
+SandstoneStone-1.name=Raw Sandstone
+SandstoneStone-2.name=Raw Sandstone
+
+SandstoneBricksSmall.name=Small Sandstone Bricks
+SandstoneBricksMedium.name=Sandstone Bricks
+SandstoneBricksLarge.name=Large Sandstone Bricks
 
 QuartzBricksSmall.name=Small Quartz Bricks
 QuartzBricksMedium.name=Quartz Bricks

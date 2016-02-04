@@ -10,7 +10,6 @@ public class BasicTab extends CreativeTabs {
 	
 	public BasicTab(String tabName) {	 
         super(CreativeTabs.getNextID(), tabName);
-        this.setNoScrollbar();
     }
 	
 	public void setTabIcon(Item tIcon) {
@@ -20,9 +19,5 @@ public class BasicTab extends CreativeTabs {
     @SideOnly(Side.CLIENT)
     public Item getTabIconItem() {
         return tI;
-    }
- 
-    public boolean hasSearchBar() {
-        return true;
     }
 }

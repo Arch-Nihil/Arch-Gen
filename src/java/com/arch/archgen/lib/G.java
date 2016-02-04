@@ -23,8 +23,8 @@ public class G {
 	public static ArrayList<BasicChunk> chunkArray = new ArrayList<BasicChunk>();
 	
 	public static final String[] sizeArray = new String[]{"Tiny", "Small", "Medium", "Large", "Huge"};
-	public static String texName = Strings.MODID + ":";
 	public static final String[] oceanicBArray = new String[]{"Ocean", "Deep Ocean", "FrozenOcean"};
+	public static String texName = Strings.MODID + ":";
 	public static final int bWeight = 81;
 	
 	public static int nTexForType(String type) {
