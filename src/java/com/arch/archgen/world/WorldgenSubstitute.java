@@ -8,7 +8,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldgenSubstitute extends WorldGenerator {
-	
 	private Block block;
     private Block target;
 
@@ -23,9 +22,9 @@ public class WorldgenSubstitute extends WorldGenerator {
 	
 	@Override
 	public boolean generate(World w, Random r, int x, int y, int z) {
-		if (w.getBlock(x, y, z).isReplaceableOreGen(w, x, y, z, this.target)) {
-				w.setBlock(x, y, z, this.block, w.rand.nextInt(3), 2);
+		if (w.getBlock(x, y, z).equals(target)) {
+			w.setBlock(x, y, z, this.block, w.rand.nextInt(3), 2);
 		}
-	    return true;
+		return true;
 	};
 }
