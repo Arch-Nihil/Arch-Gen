@@ -22,8 +22,10 @@ public class G {
 	public static ArrayList<BasicDust> dustArray = new ArrayList<BasicDust>();
 	public static ArrayList<BasicChunk> chunkArray = new ArrayList<BasicChunk>();
 	
-	public static final String[] sizeArray = new String[]{"Tiny", "Small", "Medium", "Large", "Huge"};
 	public static final String[] oceanicBArray = new String[]{"Ocean", "Deep Ocean", "FrozenOcean"};
+	public static final String[] sandyBArray = new String[]{"Desert", "Desert M", "Beach", "DesertHills", "Mesa", "Mesa (Bryce)", "Mesa Plateau", "Mesa Plateau F", "Mesa Plateau M", "Mesa Plateau F M"};
+	
+	public static final String[] sizeArray = new String[]{"Tiny", "Small", "Medium", "Large", "Huge"};
 	public static String texName = Strings.MODID + ":";
 	public static final int bWeight = 81;
 	
