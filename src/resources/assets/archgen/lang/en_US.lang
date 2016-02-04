@@ -62,6 +62,22 @@ DioriteBrickSmall.name=Small Diorite Brick
 DioriteBrickMedium.name=Diorite Brick
 DioriteBrickLarge.name=Large Diorite Brick
 
+PeridotiteDustTiny.name=Tiny Peridotite Dust
+PeridotiteDustSmall.name=Small Peridotite Dust
+PeridotiteDustMedium.name=Peridotite Dust
+PeridotiteDustLarge.name=Large Peridotite Dust
+PeridotiteDustHuge.name=Huge Peridotite Dust
+
+PeridotiteChunkTiny.name=Tiny Peridotite Chunk
+PeridotiteChunkSmall.name=Small Peridotite Chunk
+PeridotiteChunkMedium.name=Peridotite Chunk
+PeridotiteChunkLarge.name=Large Peridotite Chunk
+PeridotiteChunkHuge.name=Huge Peridotite Chunk
+
+PeridotiteBrickSmall.name=Small Peridotite Brick
+PeridotiteBrickMedium.name=Peridotite Brick
+PeridotiteBrickLarge.name=Large Peridotite Brick
+
 MudstoneDustTiny.name=Tiny Mudstone Dust
 MudstoneDustSmall.name=Small Mudstone Dust
 MudstoneDustMedium.name=Mudstone Dust
@@ -190,6 +206,22 @@ CalciteBrickSmall.name=Small Calcite Brick
 CalciteBrickMedium.name=Calcite Brick
 CalciteBrickLarge.name=Large Calcite Brick
 
+OlivineDustTiny.name=Tiny Olivine Dust
+OlivineDustSmall.name=Small Olivine Dust
+OlivineDustMedium.name=Olivine Dust
+OlivineDustLarge.name=Large Olivine Dust
+OlivineDustHuge.name=Huge Olivine Dust
+
+OlivineChunkTiny.name=Tiny Olivine Chunk
+OlivineChunkSmall.name=Small Olivine Chunk
+OlivineChunkMedium.name=Olivine Chunk
+OlivineChunkLarge.name=Large Olivine Chunk
+OlivineChunkHuge.name=Huge Olivine Chunk
+
+OlivineBrickSmall.name=Small Olivine Brick
+OlivineBrickMedium.name=Olivine Brick
+OlivineBrickLarge.name=Large Olivine Brick
+
 GraniteStone-0.name=Raw Granite
 GraniteStone-1.name=Raw Granite
 GraniteStone-2.name=Raw Granite
@@ -221,6 +253,14 @@ DioriteStone-2.name=Raw Diorite
 DioriteBricksSmall.name=Small Diorite Bricks
 DioriteBricksMedium.name=Diorite Bricks
 DioriteBricksLarge.name=Large Diorite Bricks
+
+PeridotiteStone-0.name=Raw Peridotite
+PeridotiteStone-1.name=Raw Peridotite
+PeridotiteStone-2.name=Raw Peridotite
+
+PeridotiteBricksSmall.name=Small Peridotite Bricks
+PeridotiteBricksMedium.name=Peridotite Bricks
+PeridotiteBricksLarge.name=Large Peridotite Bricks
 
 MudstoneStone-0.name=Raw Mudstone
 MudstoneStone-1.name=Raw Mudstone
@@ -265,6 +305,10 @@ HornblendeBricksLarge.name=Large Hornblende Bricks
 CalciteBricksSmall.name=Small Calcite Bricks
 CalciteBricksMedium.name=Calcite Bricks
 CalciteBricksLarge.name=Large Calcite Bricks
+
+OlivineBricksSmall.name=Small Olivine Bricks
+OlivineBricksMedium.name=Olivine Bricks
+OlivineBricksLarge.name=Large Olivine Bricks
 
 itemGroup.DustTab=Arch-Gen : Dusts
 itemGroup.ChunkTab=Arch-Gen : Chunks
