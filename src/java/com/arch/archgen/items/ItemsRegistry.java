@@ -18,15 +18,15 @@ public class ItemsRegistry {
 
 	public static Item graniteDust, basaltDust, gabbroDust, dioriteDust, peridotiteDust;
 	public static Item mudstoneDust, limestoneDust, sandstoneDust;
-	public static Item quartzDust, alkaliFeldsparDust, plagioclaseDust, hornblendeDust, calciteDust, olivineDust;
+	public static Item quartzDust, alkaliFeldsparDust, plagioclaseDust, hornblendeDust, calciteDust, olivineDust, enstatiteDust, diopsideDust;
 	
 	public static Item graniteChunk, basaltChunk, gabbroChunk, dioriteChunk, peridotiteChunk;
 	public static Item mudstoneChunk, limestoneChunk, sandstoneChunk;
-	public static Item quartzChunk, alkaliFeldsparChunk, plagioclaseChunk, hornblendeChunk, calciteChunk, olivineChunk;
+	public static Item quartzChunk, alkaliFeldsparChunk, plagioclaseChunk, hornblendeChunk, calciteChunk, olivineChunk, enstatiteChunk, diopsideChunk;
 	
 	public static Item graniteBrick, basaltBrick, gabbroBrick, dioriteBrick, peridotiteBrick;
 	public static Item mudstoneBrick, limestoneBrick, sandstoneBrick;
-	public static Item quartzBrick, alkaliFeldsparBrick, plagioclaseBrick, hornblendeBrick, calciteBrick, olivineBrick;
+	public static Item quartzBrick, alkaliFeldsparBrick, plagioclaseBrick, hornblendeBrick, calciteBrick, olivineBrick, enstatiteBrick, diopsideBrick;
 	
 	public static void init() {
 		GameRegistry.registerItem(graniteDust = new IgneousDust("Granite"), "GraniteDust");
@@ -45,6 +45,8 @@ public class ItemsRegistry {
 		GameRegistry.registerItem(hornblendeDust = new MineralDust("Hornblende"), "HornblendeDust");
 		GameRegistry.registerItem(calciteDust = new MineralDust("Calcite"), "CalciteDust");
 		GameRegistry.registerItem(olivineDust = new MineralDust("Olivine"), "OlivineDust");
+		GameRegistry.registerItem(enstatiteDust = new MineralDust("Enstatite"), "EnstatiteDust");
+		GameRegistry.registerItem(diopsideDust = new MineralDust("Diopside"), "DiopsideDust");
 		
 		GameRegistry.registerItem(graniteChunk = new IgneousChunk("Granite"), "GraniteChunk");
 		GameRegistry.registerItem(basaltChunk = new IgneousChunk("Basalt"), "BasaltChunk");
@@ -62,6 +64,8 @@ public class ItemsRegistry {
 		GameRegistry.registerItem(hornblendeChunk = new MineralChunk("Hornblende"), "HornblendeChunk");
 		GameRegistry.registerItem(calciteChunk = new MineralChunk("Calcite"), "CalciteChunk");
 		GameRegistry.registerItem(olivineChunk = new MineralChunk("Olivine"), "OlivineChunk");
+		GameRegistry.registerItem(enstatiteChunk = new MineralChunk("Enstatite"), "EnstatiteChunk");
+		GameRegistry.registerItem(diopsideChunk = new MineralChunk("Diopside"), "DiopsideChunk");
 		
 		if (Config.doGenBricks) {
 			GameRegistry.registerItem(graniteBrick = new IgneousBrick("Granite"), "GraniteBrick");
@@ -80,6 +84,8 @@ public class ItemsRegistry {
 			GameRegistry.registerItem(hornblendeBrick = new MineralBrick("Hornblende"), "HornblendeBrick");
 			GameRegistry.registerItem(calciteBrick = new MineralBrick("Calcite"), "CalciteBrick");
 			GameRegistry.registerItem(olivineBrick = new MineralBrick("Olivine"), "OlivineBrick");
+			GameRegistry.registerItem(enstatiteBrick = new MineralBrick("Enstatite"), "EnstatiteBrick");
+			GameRegistry.registerItem(diopsideBrick = new MineralBrick("Diopside"), "DiopsideBrick");
 		}
 	}
 }

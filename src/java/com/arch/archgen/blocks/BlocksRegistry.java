@@ -17,7 +17,7 @@ public class BlocksRegistry {
 	
 	public static Block graniteBricks, basaltBricks, gabbroBricks, dioriteBricks, peridotiteBricks;
 	public static Block mudstoneBricks, limestoneBricks, sandstoneBricks;
-	public static Block quartzBricks, alkaliFeldsparBricks, plagioclaseBricks, hornblendeBricks, calciteBricks, olivineBricks;
+	public static Block quartzBricks, alkaliFeldsparBricks, plagioclaseBricks, hornblendeBricks, calciteBricks, olivineBricks, enstatiteBricks, diopsideBricks;
 	
 	public static void init() {
 		GameRegistry.registerBlock(granite = new IgneousStone("Granite", "Quartz,AlkaliFeldspar,Plagioclase,Hornblende", "9,5,5,1", 10.0F, 10.0F, 2), BasicItemBlocks.class, "Granite");
@@ -26,9 +26,9 @@ public class BlocksRegistry {
 		GameRegistry.registerBlock(diorite = new IgneousStone("Diorite", "Plagioclase,Hornblende", "5,5", 10.0F, 10.0F, 2), BasicItemBlocks.class, "Diorite");
 		GameRegistry.registerBlock(peridotite = new IgneousStone("Peridotite", "Olivine,Enstatite,Diopside", "11,5,3", 10.0F, 10.0F, 2), BasicItemBlocks.class, "Peridotite");
 		
-		GameRegistry.registerBlock(mudstone = new SedimentaryStone("Mudstone", "Quartz, Orthoclase, AlkaliFeldspar", "9,5,3", 10.0F, 10.0F, 1), BasicItemBlocks.class, "Mudstone");
-		GameRegistry.registerBlock(limestone = new SedimentaryStone("Limestone", "Calcite, Quartz, Orthoclase", "11,5,3", 10.0F, 10.0F, 1), BasicItemBlocks.class, "Limestone");
-		GameRegistry.registerBlock(sandstone = new SedimentaryStone("Sandstone", "Quartz, AlkaliFeldspar, Orthoclase", "11,7,5", 10.0F, 10.0F, 1), BasicItemBlocks.class, "Sandstone");
+		GameRegistry.registerBlock(mudstone = new SedimentaryStone("Mudstone", "Quartz,Orthoclase,AlkaliFeldspar", "9,5,3", 10.0F, 10.0F, 1), BasicItemBlocks.class, "Mudstone");
+		GameRegistry.registerBlock(limestone = new SedimentaryStone("Limestone", "Calcite,Quartz,Orthoclase", "11,5,3", 10.0F, 10.0F, 1), BasicItemBlocks.class, "Limestone");
+		GameRegistry.registerBlock(sandstone = new SedimentaryStone("Sandstone", "Quartz,AlkaliFeldspar,Orthoclase", "11,7,5", 10.0F, 10.0F, 1), BasicItemBlocks.class, "Sandstone");
 		
 		if (Config.doGenBricks) {
 			GameRegistry.registerBlock(graniteBricks = new IgneousBricks("Granite", 10.0F, 10.0F, 1), BasicItemBlocks.class, "GraniteBricks");
@@ -47,6 +47,8 @@ public class BlocksRegistry {
 			GameRegistry.registerBlock(hornblendeBricks = new MineralBricks("Hornblende", 10.0F, 10.0F, 2), BasicItemBlocks.class, "HornblendeBricks");
 			GameRegistry.registerBlock(calciteBricks = new MineralBricks("Calcite", 10.0F, 10.0F, 2), BasicItemBlocks.class, "CalciteBricks");
 			GameRegistry.registerBlock(olivineBricks = new MineralBricks("Olivine", 10.0F, 10.0F, 2), BasicItemBlocks.class, "OlivineBricks");
+			GameRegistry.registerBlock(enstatiteBricks = new MineralBricks("Enstatite", 10.0F, 10.0F, 2), BasicItemBlocks.class, "EnstatiteBricks");
+			GameRegistry.registerBlock(diopsideBricks = new MineralBricks("Diopside", 10.0F, 10.0F, 2), BasicItemBlocks.class, "DiopsideBricks");
 		}
 	}
 }

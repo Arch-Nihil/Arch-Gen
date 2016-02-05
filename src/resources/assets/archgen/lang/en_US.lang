@@ -222,6 +222,38 @@ OlivineBrickSmall.name=Small Olivine Brick
 OlivineBrickMedium.name=Olivine Brick
 OlivineBrickLarge.name=Large Olivine Brick
 
+EnstatiteDustTiny.name=Tiny Enstatite Dust
+EnstatiteDustSmall.name=Small Enstatite Dust
+EnstatiteDustMedium.name=Enstatite Dust
+EnstatiteDustLarge.name=Large Enstatite Dust
+EnstatiteDustHuge.name=Huge Enstatite Dust
+
+EnstatiteChunkTiny.name=Tiny Enstatite Chunk
+EnstatiteChunkSmall.name=Small Enstatite Chunk
+EnstatiteChunkMedium.name=Enstatite Chunk
+EnstatiteChunkLarge.name=Large Enstatite Chunk
+EnstatiteChunkHuge.name=Huge Enstatite Chunk
+
+EnstatiteBrickSmall.name=Small Enstatite Brick
+EnstatiteBrickMedium.name=Enstatite Brick
+EnstatiteBrickLarge.name=Large Enstatite Brick
+
+DiopsideDustTiny.name=Tiny Diopside Dust
+DiopsideDustSmall.name=Small Diopside Dust
+DiopsideDustMedium.name=Diopside Dust
+DiopsideDustLarge.name=Large Diopside Dust
+DiopsideDustHuge.name=Huge Diopside Dust
+
+DiopsideChunkTiny.name=Tiny Diopside Chunk
+DiopsideChunkSmall.name=Small Diopside Chunk
+DiopsideChunkMedium.name=Diopside Chunk
+DiopsideChunkLarge.name=Large Diopside Chunk
+DiopsideChunkHuge.name=Huge Diopside Chunk
+
+DiopsideBrickSmall.name=Small Diopside Brick
+DiopsideBrickMedium.name=Diopside Brick
+DiopsideBrickLarge.name=Large Diopside Brick
+
 GraniteStone-0.name=Raw Granite
 GraniteStone-1.name=Raw Granite
 GraniteStone-2.name=Raw Granite
@@ -309,6 +341,14 @@ CalciteBricksLarge.name=Large Calcite Bricks
 OlivineBricksSmall.name=Small Olivine Bricks
 OlivineBricksMedium.name=Olivine Bricks
 OlivineBricksLarge.name=Large Olivine Bricks
+
+EnstatiteBricksSmall.name=Small Enstatite Bricks
+EnstatiteBricksMedium.name=Enstatite Bricks
+EnstatiteBricksLarge.name=Large Enstatite Bricks
+
+DiopsideBricksSmall.name=Small Diopside Bricks
+DiopsideBricksMedium.name=Diopside Bricks
+DiopsideBricksLarge.name=Large Diopside Bricks
 
 itemGroup.DustTab=Arch-Gen : Dusts
 itemGroup.ChunkTab=Arch-Gen : Chunks
