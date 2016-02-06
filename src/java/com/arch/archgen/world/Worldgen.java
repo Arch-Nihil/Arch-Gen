@@ -50,7 +50,7 @@ public class Worldgen implements IWorldGenerator {
 					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "relative", 1, 0, -63, 1, 100);
 				}
 				else {
-					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "relative", 1, 0, -244, -8, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "relative", 1, 0, -248, -8, 100);
 					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "relative", 1, 0, -248, 16, 100);
 					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "relative", 1, 0, -248, -1, 100);
 				}
@@ -98,6 +98,12 @@ public class Worldgen implements IWorldGenerator {
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 18, 19, 0, 0, 75);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 19, 20, 0, 0, 50);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 20, 21, 0, 0, 25);
+					if (topBlock[136] > 128 || topBlock[68] > 128 || topBlock[76] > 128 || topBlock[196] > 128 || topBlock[204] > 128) {
+						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 128, 0, -11, -1, 100);
+						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 127, 0, -12, -10, 75);
+						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 126, 0, -13, -12, 50);
+						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 125, 0, -14, -13, 25);
+					}
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 53, 0, -9, 0, 100);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 52, 0, -10, -9, 75);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 51, 0, -11, -10, 50);
@@ -154,7 +160,7 @@ public class Worldgen implements IWorldGenerator {
 		if (w.rand.nextInt(1000) < chance) {
 			int height;
 			if (relativity == "relative")
-				height = w.rand.nextInt((topBlock[138] + maxRelativeY) - (topBlock[138] + minRelativeY));
+				height = w.rand.nextInt((topBlock[136] + maxRelativeY) - (topBlock[136] + minRelativeY));
 			else
 				height = w.rand.nextInt(maxY - minY);
 			int cSizeZ, cSizeX;

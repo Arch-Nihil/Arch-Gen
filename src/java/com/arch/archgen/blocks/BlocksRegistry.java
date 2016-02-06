@@ -12,19 +12,20 @@ import net.minecraft.block.Block;
 
 public class BlocksRegistry {
 	
-	public static Block granite, basalt, gabbro, diorite, peridotite;
+	public static Block granite, basalt, gabbro, diorite, peridotite, rhyolite;
 	public static Block mudstone, limestone, sandstone;
 	
-	public static Block graniteBricks, basaltBricks, gabbroBricks, dioriteBricks, peridotiteBricks;
+	public static Block graniteBricks, basaltBricks, gabbroBricks, dioriteBricks, peridotiteBricks, rhyoliteBricks;
 	public static Block mudstoneBricks, limestoneBricks, sandstoneBricks;
 	public static Block quartzBricks, alkaliFeldsparBricks, plagioclaseBricks, hornblendeBricks, calciteBricks, olivineBricks, enstatiteBricks, diopsideBricks;
 	
 	public static void init() {
-		GameRegistry.registerBlock(granite = new IgneousStone("Granite", "Quartz,AlkaliFeldspar,Plagioclase,Hornblende", "9,5,5,1", 10.0F, 10.0F, 2), BasicItemBlocks.class, "Granite");
+		GameRegistry.registerBlock(granite = new IgneousStone("Granite", "Quartz,AlkaliFeldspar,Plagioclase,Hornblende", "9,7,3,1", 10.0F, 10.0F, 2), BasicItemBlocks.class, "Granite");
 		GameRegistry.registerBlock(basalt = new IgneousStone("Basalt", "Plagioclase", "5", 10.0F, 10.0F, 2), BasicItemBlocks.class, "Basalt");
 		GameRegistry.registerBlock(gabbro = new IgneousStone("Gabbro", "Plagioclase", "7", 10.0F, 10.0F, 2), BasicItemBlocks.class, "Gabbro");
 		GameRegistry.registerBlock(diorite = new IgneousStone("Diorite", "Plagioclase,Hornblende", "5,5", 10.0F, 10.0F, 2), BasicItemBlocks.class, "Diorite");
 		GameRegistry.registerBlock(peridotite = new IgneousStone("Peridotite", "Olivine,Enstatite,Diopside", "11,5,3", 10.0F, 10.0F, 2), BasicItemBlocks.class, "Peridotite");
+		GameRegistry.registerBlock(rhyolite = new IgneousStone("Rhyolite", "Quartz,AlkaliFeldspar,Plagioclase,Hornblende", "7,5,3,1", 10.0F, 10.0F, 2), BasicItemBlocks.class, "Rhyolite");
 		
 		GameRegistry.registerBlock(mudstone = new SedimentaryStone("Mudstone", "Quartz,Orthoclase,AlkaliFeldspar", "9,5,3", 10.0F, 10.0F, 1), BasicItemBlocks.class, "Mudstone");
 		GameRegistry.registerBlock(limestone = new SedimentaryStone("Limestone", "Calcite,Quartz,Orthoclase", "11,5,3", 10.0F, 10.0F, 1), BasicItemBlocks.class, "Limestone");
@@ -36,6 +37,7 @@ public class BlocksRegistry {
 			GameRegistry.registerBlock(gabbroBricks = new IgneousBricks("Gabbro", 10.0F, 10.0F, 1), BasicItemBlocks.class, "GabbroBricks");
 			GameRegistry.registerBlock(dioriteBricks = new IgneousBricks("Diorite", 10.0F, 10.0F, 1), BasicItemBlocks.class, "DioriteBricks");
 			GameRegistry.registerBlock(peridotiteBricks = new IgneousBricks("Peridotite", 10.0F, 10.0F, 1), BasicItemBlocks.class, "PeridotiteBricks");
+			GameRegistry.registerBlock(rhyoliteBricks = new IgneousBricks("Rhyolite", 10.0F, 10.0F, 1), BasicItemBlocks.class, "RhyoliteBricks");
 			
 			GameRegistry.registerBlock(mudstoneBricks = new SedimentaryBricks("Mudstone", 10.0F, 10.0F, 0), BasicItemBlocks.class, "MudstoneBricks");
 			GameRegistry.registerBlock(limestoneBricks = new SedimentaryBricks("Limestone", 10.0F, 10.0F, 0), BasicItemBlocks.class, "LimestoneBricks");

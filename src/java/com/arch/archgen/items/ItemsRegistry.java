@@ -16,15 +16,15 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ItemsRegistry {
 
-	public static Item graniteDust, basaltDust, gabbroDust, dioriteDust, peridotiteDust;
+	public static Item graniteDust, basaltDust, gabbroDust, dioriteDust, peridotiteDust, rhyoliteDust;
 	public static Item mudstoneDust, limestoneDust, sandstoneDust;
 	public static Item quartzDust, alkaliFeldsparDust, plagioclaseDust, hornblendeDust, calciteDust, olivineDust, enstatiteDust, diopsideDust;
 	
-	public static Item graniteChunk, basaltChunk, gabbroChunk, dioriteChunk, peridotiteChunk;
+	public static Item graniteChunk, basaltChunk, gabbroChunk, dioriteChunk, peridotiteChunk, rhyoliteChunk;
 	public static Item mudstoneChunk, limestoneChunk, sandstoneChunk;
 	public static Item quartzChunk, alkaliFeldsparChunk, plagioclaseChunk, hornblendeChunk, calciteChunk, olivineChunk, enstatiteChunk, diopsideChunk;
 	
-	public static Item graniteBrick, basaltBrick, gabbroBrick, dioriteBrick, peridotiteBrick;
+	public static Item graniteBrick, basaltBrick, gabbroBrick, dioriteBrick, peridotiteBrick, rhyoliteBrick;
 	public static Item mudstoneBrick, limestoneBrick, sandstoneBrick;
 	public static Item quartzBrick, alkaliFeldsparBrick, plagioclaseBrick, hornblendeBrick, calciteBrick, olivineBrick, enstatiteBrick, diopsideBrick;
 	
@@ -34,6 +34,7 @@ public class ItemsRegistry {
 		GameRegistry.registerItem(gabbroDust = new IgneousDust("Gabbro"), "GabbroDust");
 		GameRegistry.registerItem(dioriteDust = new IgneousDust("Diorite"), "DioriteDust");
 		GameRegistry.registerItem(peridotiteDust = new IgneousDust("Peridotite"), "PeridotiteDust");
+		GameRegistry.registerItem(rhyoliteDust = new IgneousDust("Rhyolite"), "RhyoliteDust");
 		
 		GameRegistry.registerItem(mudstoneDust = new SedimentaryDust("Mudstone"), "MudstoneDust");
 		GameRegistry.registerItem(limestoneDust = new SedimentaryDust("Limestone"), "LimestoneDust");
@@ -53,6 +54,7 @@ public class ItemsRegistry {
 		GameRegistry.registerItem(gabbroChunk = new IgneousChunk("Gabbro"), "GabbroChunk");
 		GameRegistry.registerItem(dioriteChunk = new IgneousChunk("Diorite"), "DioriteChunk");
 		GameRegistry.registerItem(peridotiteChunk = new IgneousChunk("Peridotite"), "PeridotiteChunk");
+		GameRegistry.registerItem(rhyoliteChunk = new IgneousChunk("Rhyolite"), "RhyoliteChunk");
 		
 		GameRegistry.registerItem(mudstoneChunk = new SedimentaryChunk("Mudstone"), "MudstoneChunk");
 		GameRegistry.registerItem(limestoneChunk = new SedimentaryChunk("Limestone"), "LimestoneChunk");
@@ -73,6 +75,7 @@ public class ItemsRegistry {
 			GameRegistry.registerItem(gabbroBrick = new IgneousBrick("Gabbro"), "GabbroBrick");
 			GameRegistry.registerItem(dioriteBrick = new IgneousBrick("Diorite"), "DioriteBrick");
 			GameRegistry.registerItem(peridotiteBrick = new IgneousBrick("Peridotite"), "PeridotiteBrick");
+			GameRegistry.registerItem(rhyoliteBrick = new IgneousBrick("Rhyolite"), "RhyoliteBrick");
 			
 			GameRegistry.registerItem(mudstoneBrick = new SedimentaryBrick("Mudstone"), "MudstoneBrick");
 			GameRegistry.registerItem(limestoneBrick = new SedimentaryBrick("Limestone"), "LimestoneBrick");
