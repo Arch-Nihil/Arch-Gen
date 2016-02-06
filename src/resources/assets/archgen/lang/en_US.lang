@@ -78,6 +78,22 @@ PeridotiteBrickSmall.name=Small Peridotite Brick
 PeridotiteBrickMedium.name=Peridotite Brick
 PeridotiteBrickLarge.name=Large Peridotite Brick
 
+RhyoliteDustTiny.name=Tiny Rhyolite Dust
+RhyoliteDustSmall.name=Small Rhyolite Dust
+RhyoliteDustMedium.name=Rhyolite Dust
+RhyoliteDustLarge.name=Large Rhyolite Dust
+RhyoliteDustHuge.name=Huge Rhyolite Dust
+
+RhyoliteChunkTiny.name=Tiny Rhyolite Chunk
+RhyoliteChunkSmall.name=Small Rhyolite Chunk
+RhyoliteChunkMedium.name=Rhyolite Chunk
+RhyoliteChunkLarge.name=Large Rhyolite Chunk
+RhyoliteChunkHuge.name=Huge Rhyolite Chunk
+
+RhyoliteBrickSmall.name=Small Rhyolite Brick
+RhyoliteBrickMedium.name=Rhyolite Brick
+RhyoliteBrickLarge.name=Large Rhyolite Brick
+
 MudstoneDustTiny.name=Tiny Mudstone Dust
 MudstoneDustSmall.name=Small Mudstone Dust
 MudstoneDustMedium.name=Mudstone Dust
@@ -293,6 +309,14 @@ PeridotiteStone-2.name=Raw Peridotite
 PeridotiteBricksSmall.name=Small Peridotite Bricks
 PeridotiteBricksMedium.name=Peridotite Bricks
 PeridotiteBricksLarge.name=Large Peridotite Bricks
+
+RhyoliteStone-0.name=Raw Rhyolite
+RhyoliteStone-1.name=Raw Rhyolite
+RhyoliteStone-2.name=Raw Rhyolite
+
+RhyoliteBricksSmall.name=Small Rhyolite Bricks
+RhyoliteBricksMedium.name=Rhyolite Bricks
+RhyoliteBricksLarge.name=Large Rhyolite Bricks
 
 MudstoneStone-0.name=Raw Mudstone
 MudstoneStone-1.name=Raw Mudstone
