@@ -16,7 +16,7 @@ public class BlocksRegistry {
 	public static Block siltstone, limestone, sandstone, shale;
 	
 	public static Block graniteBricks, basaltBricks, gabbroBricks, dioriteBricks, peridotiteBricks, rhyoliteBricks;
-	public static Block siltstoneBricks, limestoneBricks, sandstoneBricks;
+	public static Block siltstoneBricks, limestoneBricks, sandstoneBricks, shaleBricks;
 	public static Block quartzBricks, alkaliFeldsparBricks, plagioclaseBricks, hornblendeBricks, calciteBricks, olivineBricks, enstatiteBricks, diopsideBricks;
 	
 	public static void init() {
@@ -43,6 +43,7 @@ public class BlocksRegistry {
 			GameRegistry.registerBlock(siltstoneBricks = new SedimentaryBricks("Siltstone", 10.0F, 10.0F, 0), BasicItemBlocks.class, "SiltstoneBricks");
 			GameRegistry.registerBlock(limestoneBricks = new SedimentaryBricks("Limestone", 10.0F, 10.0F, 0), BasicItemBlocks.class, "LimestoneBricks");
 			GameRegistry.registerBlock(sandstoneBricks = new SedimentaryBricks("Sandstone", 10.0F, 10.0F, 0), BasicItemBlocks.class, "SandstoneBricks");
+			GameRegistry.registerBlock(shaleBricks = new SedimentaryBricks("Shale", 10.0F, 10.0F, 0), BasicItemBlocks.class, "ShaleBricks");
 			
 			GameRegistry.registerBlock(quartzBricks = new MineralBricks("Quartz", 10.0F, 10.0F, 2), BasicItemBlocks.class, "QuartzBricks");
 			GameRegistry.registerBlock(alkaliFeldsparBricks = new MineralBricks("AlkaliFeldspar", 10.0F, 10.0F, 2), BasicItemBlocks.class, "AlkaliFeldsparBricks");
