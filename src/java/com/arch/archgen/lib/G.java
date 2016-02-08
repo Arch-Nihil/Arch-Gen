@@ -10,7 +10,9 @@ import com.arch.archgen.items.brick.BasicBrick;
 import com.arch.archgen.items.chunk.BasicChunk;
 import com.arch.archgen.items.dust.BasicDust;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 
 public class G {
 	public static ArrayList<BasicBricks> bricksArray = new ArrayList<BasicBricks>();
@@ -28,6 +30,7 @@ public class G {
 	public static final String[] sizeArray = new String[]{"Tiny", "Small", "Medium", "Large", "Huge"};
 	public static String texName = Strings.MODID + ":";
 	public static final int bWeight = 81;
+	public static final Block[] solidBArray = new Block[]{Blocks.dirt, Blocks.grass, Blocks.stone, Blocks.gravel, Blocks.sand, Blocks.sandstone, Blocks.stained_hardened_clay};
 	
 	public static int nTexForType(String type) {
 		switch (type) {

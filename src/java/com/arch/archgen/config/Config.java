@@ -8,6 +8,7 @@ import net.minecraftforge.common.config.Property;
 public class Config {
 	
 	public static boolean doGenBricks, doGenMachines;
+	public static int magicNumberOne;
 	
 	public static void init(FMLPreInitializationEvent e) {
 		File cLocation = new File(e.getModConfigurationDirectory().toString()+"/Arch/Arch-Gen.cfg");
@@ -24,6 +25,10 @@ public class Config {
 		genMachines.comment = "Should the mod generate its machines to process the many stones and minerals available ?";
 		doGenMachines = genMachines.getBoolean();
 		
+		Property numberOne = bConfig.get(Configuration.CATEGORY_GENERAL, "MagicNumberOne", "8");
+		numberOne.comment = "Numbers affecting world-gen mostly for test purposes. Touch at your own risk !";
+		magicNumberOne = numberOne.getInt();
+
 		bConfig.save();
 	}
 }

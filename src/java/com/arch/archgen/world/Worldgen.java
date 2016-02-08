@@ -3,8 +3,10 @@ package com.arch.archgen.world;
 import java.util.Random;
 
 import com.arch.archgen.blocks.BlocksRegistry;
+import com.arch.archgen.config.Config;
 import com.arch.archgen.lib.G;
 
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -15,59 +17,89 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Worldgen implements IWorldGenerator {
 	int[] topBlock;
-	int[] topSolidBlock;
+	int topBlockAverage;
+	boolean answer;
 	
 	public static void init() {
 		GameRegistry.registerWorldGenerator(new Worldgen(), 0);
 	}
 	
+	public void getTopBlock(World w, int chunkX, int chunkZ, BiomeGenBase b) {
+		topBlock = new int[256];
+		
+		topBlockAverage = (w.getTopSolidOrLiquidBlock(chunkX * 16 + 1, chunkZ * 16 + 1) + w.getTopSolidOrLiquidBlock(chunkX * 16 + 14, chunkZ * 16 + 1) + w.getTopSolidOrLiquidBlock(chunkX * 16 + 1, chunkZ * 16 + 14) + w.getTopSolidOrLiquidBlock(chunkX * 16 + 14, chunkZ * 16 + 14)) / 4;
+		for (int i = 0; i < 16; i ++) {
+			for (int k = 0; k < 16; k ++) {
+				topBlock[i * 16 + k] = topBlockAverage;
+			}
+		}	
+		
+		for (int i = 0; i < 16; i ++) {
+			for (int k = 0; k < 16; k ++) {
+				checkAbove(w, chunkX, chunkZ, i, k);
+				while (checkIfSolid(w.getBlock(chunkX * 16 + i, topBlock[i * 16 + k], chunkZ * 16 + k)) == false)
+					topBlock[i * 16 + k] --;
+				topBlock[i * 16 + k] ++;
+			}
+		}
+	}
+
+	private boolean checkAbove(World w, int chunkX, int chunkZ, int i, int k) {
+		answer = false;
+		for (int m = Config.magicNumberOne; m > 0; m --) {
+			for (int n = Config.magicNumberOne; n > 0; n --) {
+				if (Math.pow(m, n) < (256 - topBlock[i * 16 + k]) / 2 && checkIfSolid(w.getBlock(chunkX * 16 + i, (int) (topBlock[i * 16 + k] + Math.pow(m, n)), chunkZ * 16 + k))) {
+					topBlock[i * 16 + k] = Math.max((int) (topBlock[i * 16 + k] + Math.pow(m, n)), topBlock[i * 16 + k]);
+					answer = true;
+					n = 0;
+				}
+			}
+		}
+		return answer;
+	}
+
+	private boolean checkIfSolid(Block b) {
+		answer = false;
+		for (int n = 0; n < G.solidBArray.length && answer == false; n ++) {
+			if (Block.isEqualTo(G.solidBArray[n], b))
+				answer = true;
+		}
+		return answer;
+	}
+
 	@Override
 	public void generate(Random r, int chunkX, int chunkZ, World w, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
 		switch (w.provider.dimensionId) {
 		case 0:
 			BiomeGenBase b = w.getBiomeGenForCoords(chunkX * 16 + 8, chunkZ * 16 + 8);
 			
-			topBlock = new int[256];
-			for (int i = 0; i < 16; i ++) {
-				for (int k = 0; k < 16; k ++) {
-					topBlock[i * 16 + k] = w.getTopSolidOrLiquidBlock(chunkX * 16 + i, chunkZ * 16 + k);
-					if (w.getBlock(chunkX * 16 + i, topBlock[i * 16 + k], chunkZ * 16 + k).equals(Blocks.water)) {
-						boolean isBSolid = false;
-						for (int j = topBlock[i * 16 + k] - 1; isBSolid == false; j--) {
-							if (!(w.getBlock(chunkX * 16 + i, j, chunkZ * 16 + k).equals(Blocks.water))) {
-								topBlock[i * 16 + k] = j + 1;
-								isBSolid = true;
-							}
-						}
-					}	
-				}
-			}
+			getTopBlock(w, chunkX, chunkZ, b);
 			
 			for (int i = 0; i < G.oceanicBArray.length; i++) {
 				if (b.biomeName.equals(G.oceanicBArray[i])) {
-					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "relative", 1, 0, -63, 1, 100);
-					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "relative", 1, 0, -63, 1, 100);
-					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "relative", 1, 0, -63, 1, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "relative", 1, 0, -63, 0, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "relative", 1, 0, -15, 0, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "relative", 1, 0, -63, 0, 100);
 				}
 				else {
-					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "relative", 1, 0, -248, -8, 100);
-					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "relative", 1, 0, -248, 16, 100);
-					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "relative", 1, 0, -248, -1, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "relative", 1, 0, -249, -8, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "relative", 1, 0, -128, 0, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "relative", 1, 0, -249, 0, 100);
 				}
 			}
 				
 			if (b.biomeName.equals("Beach")) {
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.limestone), w, r, chunkX, chunkZ, "relative", 34, 68, -16, -1, 100);
-				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.limestone), w, r, chunkX, chunkZ, "relative", 33, 0, -17, -16, 75);
-				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.limestone), w, r, chunkX, chunkZ, "relative", 32, 0, -18, -17, 50);
-				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.limestone), w, r, chunkX, chunkZ, "relative", 31, 0, -19, -18, 25);
+				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.limestone), w, r, chunkX, chunkZ, "relative", 33, 0, -17, -10, 75);
+				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.limestone), w, r, chunkX, chunkZ, "relative", 32, 0, -18, -11, 50);
+				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.limestone), w, r, chunkX, chunkZ, "relative", 31, 0, -19, -12, 25);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.limestone), w, r, chunkX, chunkZ, "absolute", 68, 69, 0, 0, 75);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.limestone), w, r, chunkX, chunkZ, "absolute", 69, 70, 0, 0, 50);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.limestone), w, r, chunkX, chunkZ, "absolute", 70, 71, 0, 0, 25);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 29, 0, -21, -16, 100);
-				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 28, 0, -22, -21, 75);
-				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 27, 0, -23, -22, 50);
-				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 26, 0, -24, -23, 25);
+				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 28, 0, -22, -18, 75);
+				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 27, 0, -23, -19, 50);
+				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 26, 0, -24, -20, 25);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "absolute", 68, 192, 0, 0, 100);
 			}
 			
@@ -82,22 +114,22 @@ public class Worldgen implements IWorldGenerator {
 			
 			for (int i = 0; i < G.oceanicBArray.length; i++) {
 				if (b.biomeName.equals(G.oceanicBArray[i])) {
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 1, 12, 0, 0, 100);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 12, 13, 0, 0, 75);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 13, 14, 0, 0, 50);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 14, 15, 0, 0, 25);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 23, 0, -5, 0, 100);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 22, 0, -6, -5, 75);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 21, 0, -7, -6, 50);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 20, 0, -8, -7, 25);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 1, 12, -63, -18, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 2, 13, -62, -19, 75);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 3, 14, -61, -20, 50);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 4, 15, -60, -21, 25);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 33, 0, -5, 0, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 32, 0, -6, -4, 75);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 31, 0, -7, -5, 50);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 30, 0, -8, -6, 25);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.basalt), w, r, chunkX, chunkZ, "absolute", 12, 64, 0, 0, 100);
 					this.runCloudGen(new WorldgenSubstitute(BlocksRegistry.peridotite, BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 4, 8, 0, 0, 48, 12, 12, 3, 45, 32, 8);
 				}
 				else
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 1, 18, 0, 0, 100);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 18, 19, 0, 0, 75);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 19, 20, 0, 0, 50);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 20, 21, 0, 0, 25);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 1, 24, -254, -48, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 2, 25, -253, -49, 75);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 3, 26, -252, -50, 50);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 4, 27, -251, -51, 25);
 					if (topBlock[0] > 128 || topBlock[15] > 128 || topBlock[241] > 128 || topBlock[255] > 128 || topBlock[136] > 128 || topBlock[68] > 128 || topBlock[76] > 128 || topBlock[196] > 128 || topBlock[204] > 128) {
 						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 128, 0, -11, -1, 100);
 						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 127, 0, -12, -2, 75);
@@ -105,13 +137,13 @@ public class Worldgen implements IWorldGenerator {
 						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 125, 0, -14, -4, 25);
 					}
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 53, 0, -9, 0, 100);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 52, 0, -10, -9, 75);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 51, 0, -11, -10, 50);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 50, 0, -12, -11, 25);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.diorite), w, r, chunkX, chunkZ, "relative", 12, 61, -244, -68, 100);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.diorite), w, r, chunkX, chunkZ, "relative", 12, 62, -68, -67, 75);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.diorite), w, r, chunkX, chunkZ, "relative", 12, 63, -67, -66, 50);
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.diorite), w, r, chunkX, chunkZ, "relative", 12, 64, -66, -65, 25);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 52, 0, -10, -6, 75);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 51, 0, -11, -7, 50);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.mudstone), w, r, chunkX, chunkZ, "relative", 50, 0, -12, -8, 25);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.diorite), w, r, chunkX, chunkZ, "relative", 12, 81, -153, -68, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.diorite), w, r, chunkX, chunkZ, "relative", 12, 82, -152, -67, 75);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.diorite), w, r, chunkX, chunkZ, "relative", 12, 83, -151, -66, 50);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.diorite), w, r, chunkX, chunkZ, "relative", 12, 84, -150, -65, 25);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.granite), w, r, chunkX, chunkZ, "absolute", 18, 252, 0, 0, 100);
 					this.runCloudGen(new WorldgenSubstitute(BlocksRegistry.peridotite, BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 4, 12, 0, 0, 64, 16, 16, 4, 60, 40, 5);
 			}
