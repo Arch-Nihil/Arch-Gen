@@ -5,6 +5,7 @@ import java.util.Random;
 import com.arch.archgen.blocks.BlocksRegistry;
 import com.arch.archgen.config.Config;
 import com.arch.archgen.lib.G;
+import com.google.common.primitives.Ints;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -24,6 +25,7 @@ public class Worldgen implements IWorldGenerator {
 		GameRegistry.registerWorldGenerator(new Worldgen(), 0);
 	}
 	
+	// --- Getting top block for the X, Z coordinate.
 	public void getTopBlock(World w, int chunkX, int chunkZ, BiomeGenBase b) {
 		topBlock = new int[256];
 		
@@ -36,7 +38,12 @@ public class Worldgen implements IWorldGenerator {
 		
 		for (int i = 0; i < 16; i ++) {
 			for (int k = 0; k < 16; k ++) {
-				checkAbove(w, chunkX, chunkZ, i, k);
+				for (int n = 0; n < G.oceanicBArray.length; n++) {
+					if (!(b.biomeName.equals(G.oceanicBArray[n]))) {
+						checkAbove(w, chunkX, chunkZ, i, k);
+						checkAboveSmall(w, chunkX, chunkZ, i, k);
+					}
+				}
 				while (checkIfSolid(w.getBlock(chunkX * 16 + i, topBlock[i * 16 + k], chunkZ * 16 + k)) == false)
 					topBlock[i * 16 + k] --;
 				topBlock[i * 16 + k] ++;
@@ -44,20 +51,36 @@ public class Worldgen implements IWorldGenerator {
 		}
 	}
 
+	// --- Check for solid block avove in increments of one.
+	private boolean checkAboveSmall(World w, int chunkX, int chunkZ, int i, int k) {
+		answer = false;
+		for (int m = Config.magicNumberTwo; m > 0; m --) {
+			if (checkIfSolid(w.getBlock(chunkX * 16 + i, topBlock[i * 16 + k] + m, chunkZ * 16 + k))) {
+				topBlock[i * 16 + k] = topBlock[i * 16 + k] + m;
+				answer = true;
+				if (m != Config.magicNumberTwo)
+					m = 0;
+			}
+		}
+		return answer;
+	}
+	
+	// --- Check for solid block avove in variable increments of multiples.
 	private boolean checkAbove(World w, int chunkX, int chunkZ, int i, int k) {
 		answer = false;
-		for (int m = Config.magicNumberOne; m > 0; m --) {
-			for (int n = Config.magicNumberOne; n > 0; n --) {
-				if (Math.pow(m, n) < (256 - topBlock[i * 16 + k]) / 2 && checkIfSolid(w.getBlock(chunkX * 16 + i, (int) (topBlock[i * 16 + k] + Math.pow(m, n)), chunkZ * 16 + k))) {
+		for (int m = Config.magicNumberOne; m > 1; m --) {
+			for (int n = Config.magicNumberOne; n > 3; n --) {
+				if (Math.pow(m, n) < (256 - topBlock[i * 16 + k]) && checkIfSolid(w.getBlock(chunkX * 16 + i, (int) (topBlock[i * 16 + k] + Math.pow(m, n)), chunkZ * 16 + k))) {
 					topBlock[i * 16 + k] = Math.max((int) (topBlock[i * 16 + k] + Math.pow(m, n)), topBlock[i * 16 + k]);
 					answer = true;
-					n = 0;
+					n = 2;
 				}
 			}
 		}
 		return answer;
 	}
 
+	// --- Check to see if current block is solid.
 	private boolean checkIfSolid(Block b) {
 		answer = false;
 		for (int n = 0; n < G.solidBArray.length && answer == false; n ++) {
@@ -75,16 +98,19 @@ public class Worldgen implements IWorldGenerator {
 			
 			getTopBlock(w, chunkX, chunkZ, b);
 			
-			for (int i = 0; i < G.oceanicBArray.length; i++) {
-				if (b.biomeName.equals(G.oceanicBArray[i])) {
+			for (int n = 0; n < G.oceanicBArray.length; n ++) {
+				if (b.biomeName.equals(G.oceanicBArray[n])) {
 					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "relative", 1, 0, -63, 0, 100);
 					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "relative", 1, 0, -15, 0, 100);
 					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "relative", 1, 0, -63, 0, 100);
 				}
 				else {
-					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "relative", 1, 0, -249, -8, 100);
-					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "relative", 1, 0, -128, 0, 100);
-					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "relative", 1, 0, -249, 0, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "absolute", 1, 63, 0, 0, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "absolute", 1, 63, 0, 0, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "absolute", 1, 63, 0, 0, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "relative", 64, 0, -192, 0, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "relative", 64, 0, -192, 0, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "relative", 64, 0, -192, -8, 100);
 				}
 			}
 				
@@ -105,7 +131,7 @@ public class Worldgen implements IWorldGenerator {
 			
 			for (int i = 0; i < G.sandyBArray.length; i++) {
 				if (b.biomeName.equals(G.sandyBArray[i])) {
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 44, 0, -116, -1, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 44, 0, -116, 0, 100);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 43, 0, -117, -20, 75);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 42, 0, -118, -21, 50);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 41, 0, -119, -22, 25);
@@ -130,7 +156,7 @@ public class Worldgen implements IWorldGenerator {
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 2, 25, -253, -49, 75);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 3, 26, -252, -50, 50);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 4, 27, -251, -51, 25);
-					if (topBlock[0] > 128 || topBlock[15] > 128 || topBlock[241] > 128 || topBlock[255] > 128 || topBlock[136] > 128 || topBlock[68] > 128 || topBlock[76] > 128 || topBlock[196] > 128 || topBlock[204] > 128) {
+					if (Ints.max(topBlock) > 128) {
 						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 128, 0, -11, -1, 100);
 						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 127, 0, -12, -2, 75);
 						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 126, 0, -13, -3, 50);
