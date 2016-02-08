@@ -94,21 +94,21 @@ RhyoliteBrickSmall.name=Small Rhyolite Brick
 RhyoliteBrickMedium.name=Rhyolite Brick
 RhyoliteBrickLarge.name=Large Rhyolite Brick
 
-MudstoneDustTiny.name=Tiny Mudstone Dust
-MudstoneDustSmall.name=Small Mudstone Dust
-MudstoneDustMedium.name=Mudstone Dust
-MudstoneDustLarge.name=Large Mudstone Dust
-MudstoneDustHuge.name=Huge Mudstone Dust
+SiltstoneDustTiny.name=Tiny Siltstone Dust
+SiltstoneDustSmall.name=Small Siltstone Dust
+SiltstoneDustMedium.name=Siltstone Dust
+SiltstoneDustLarge.name=Large Siltstone Dust
+SiltstoneDustHuge.name=Huge Siltstone Dust
 
-MudstoneChunkTiny.name=Tiny Mudstone Chunk
-MudstoneChunkSmall.name=Small Mudstone Chunk
-MudstoneChunkMedium.name=Mudstone Chunk
-MudstoneChunkLarge.name=Large Mudstone Chunk
-MudstoneChunkHuge.name=Huge Mudstone Chunk
+SiltstoneChunkTiny.name=Tiny Siltstone Chunk
+SiltstoneChunkSmall.name=Small Siltstone Chunk
+SiltstoneChunkMedium.name=Siltstone Chunk
+SiltstoneChunkLarge.name=Large Siltstone Chunk
+SiltstoneChunkHuge.name=Huge Siltstone Chunk
 
-MudstoneBrickSmall.name=Small Mudstone Brick
-MudstoneBrickMedium.name=Mudstone Brick
-MudstoneBrickLarge.name=Large Mudstone Brick
+SiltstoneBrickSmall.name=Small Siltstone Brick
+SiltstoneBrickMedium.name=Siltstone Brick
+SiltstoneBrickLarge.name=Large Siltstone Brick
 
 LimestoneDustTiny.name=Tiny Limestone Dust
 LimestoneDustSmall.name=Small Limestone Dust
@@ -141,6 +141,22 @@ SandstoneChunkHuge.name=Huge Sandstone Chunk
 SandstoneBrickSmall.name=Small Sandstone Brick
 SandstoneBrickMedium.name=Sandstone Brick
 SandstoneBrickLarge.name=Large Sandstone Brick
+
+ShaleDustTiny.name=Tiny Shale Dust
+ShaleDustSmall.name=Small Shale Dust
+ShaleDustMedium.name=Shale Dust
+ShaleDustLarge.name=Large Shale Dust
+ShaleDustHuge.name=Huge Shale Dust
+
+ShaleChunkTiny.name=Tiny Shale Chunk
+ShaleChunkSmall.name=Small Shale Chunk
+ShaleChunkMedium.name=Shale Chunk
+ShaleChunkLarge.name=Large Shale Chunk
+ShaleChunkHuge.name=Huge Shale Chunk
+
+ShaleBrickSmall.name=Small Shale Brick
+ShaleBrickMedium.name=Shale Brick
+ShaleBrickLarge.name=Large Shale Brick
 
 QuartzDustTiny.name=Tiny Quartz Dust
 QuartzDustSmall.name=Small Quartz Dust
@@ -318,13 +334,13 @@ RhyoliteBricksSmall.name=Small Rhyolite Bricks
 RhyoliteBricksMedium.name=Rhyolite Bricks
 RhyoliteBricksLarge.name=Large Rhyolite Bricks
 
-MudstoneStone-0.name=Raw Mudstone
-MudstoneStone-1.name=Raw Mudstone
-MudstoneStone-2.name=Raw Mudstone
+SiltstoneStone-0.name=Raw Siltstone
+SiltstoneStone-1.name=Raw Siltstone
+SiltstoneStone-2.name=Raw Siltstone
 
-MudstoneBricksSmall.name=Small Mudstone Bricks
-MudstoneBricksMedium.name=Mudstone Bricks
-MudstoneBricksLarge.name=Large Mudstone Bricks
+SiltstoneBricksSmall.name=Small Siltstone Bricks
+SiltstoneBricksMedium.name=Siltstone Bricks
+SiltstoneBricksLarge.name=Large Siltstone Bricks
 
 LimestoneStone-0.name=Raw Limestone
 LimestoneStone-1.name=Raw Limestone
@@ -341,6 +357,14 @@ SandstoneStone-2.name=Raw Sandstone
 SandstoneBricksSmall.name=Small Sandstone Bricks
 SandstoneBricksMedium.name=Sandstone Bricks
 SandstoneBricksLarge.name=Large Sandstone Bricks
+
+ShaleStone-0.name=Raw Shale
+ShaleStone-1.name=Raw Shale
+ShaleStone-2.name=Raw Shale
+
+ShaleBricksSmall.name=Small Shale Bricks
+ShaleBricksMedium.name=Shale Bricks
+ShaleBricksLarge.name=Large Shale Bricks
 
 QuartzBricksSmall.name=Small Quartz Bricks
 QuartzBricksMedium.name=Quartz Bricks
