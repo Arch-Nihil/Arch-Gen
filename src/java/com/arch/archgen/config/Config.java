@@ -29,7 +29,6 @@ public class Config {
 		numberOne.comment = "Number affecting world-gen. Up to make detection of top block more accurate at the cost of world-gen speed.";
 		magicNumberOne = numberOne.getInt();
 		Property numberTwo = bConfig.get(Configuration.CATEGORY_GENERAL, "MagicNumberTwo", "9");
-		numberTwo.comment = "Number affecting world-gen. Up to make detection of top block more accurate at the cost of world-gen speed.";
 		magicNumberTwo = numberTwo.getInt();
 
 		bConfig.save();

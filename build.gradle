@@ -19,7 +19,7 @@ apply plugin: 'forge'
 targetCompatibility = "1.8"
 sourceCompatibility = "1.8"
 
-version = "0.0.2 - Pre-Alpha"
+version = "0.0.3 - Pre-Alpha"
 group= "com.arch.archgen"
 archivesBaseName = "Arch-Gen"
 
