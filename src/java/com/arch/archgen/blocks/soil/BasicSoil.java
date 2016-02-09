@@ -8,12 +8,9 @@ import com.arch.archgen.tabs.Tabs;
 
 public class BasicSoil extends BasicBlocks {
 	protected static final String type = "Soil";
-	protected static final String subtype = "Sand";
-	protected static String texName = G.texName + type;
 	
-	public BasicSoil(String name, float hard, float res) {
-		super(G.mForType(type), Tabs.tabSoil, type, subtype, name + type, texName + name, G.tForType(type), hard, res, 0);
-		this.setStepSound(soundTypeSand);
+	public BasicSoil(String name, String sType, String tName, String rDrop, String rWeight, float hard, float res) {
+		super(G.mForType(type), Tabs.tabSoil, type, sType, name + type, tName + name, G.tForType(type), hard, res, 0);
 		
         G.soilArray.add(this);
 	}
