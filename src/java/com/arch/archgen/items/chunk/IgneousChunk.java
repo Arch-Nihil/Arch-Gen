@@ -7,6 +7,6 @@ public class IgneousChunk extends BasicChunk {
 	protected static String texName = G.texName + type + subtype;
 	
 	public IgneousChunk(String name) {
-		super(name, texName);
+		super(name, subtype, texName);
 	}
 }

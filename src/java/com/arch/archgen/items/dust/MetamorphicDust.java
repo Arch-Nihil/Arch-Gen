@@ -7,6 +7,6 @@ public class MetamorphicDust extends BasicDust {
 	protected static String texName = G.texName + type + subtype;
 	
 	public MetamorphicDust(String name) {
-		super(name, texName);
+		super(name, subtype, texName);
 	}
 }

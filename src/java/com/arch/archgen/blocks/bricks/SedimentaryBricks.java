@@ -7,6 +7,6 @@ public class SedimentaryBricks extends BasicBricks {
 	protected static String texName = G.texName + type + subtype;
 	
 	public SedimentaryBricks(String genericName, float hard, float res, int lvl) {
-		super(genericName, texName, hard, res, lvl);
+		super(genericName, subtype, texName, hard, res, lvl);
     }
 }

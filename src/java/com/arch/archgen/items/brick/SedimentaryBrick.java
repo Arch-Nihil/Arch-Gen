@@ -7,6 +7,6 @@ public class SedimentaryBrick extends BasicBrick {
 	protected static String texName = G.texName + type + subtype;
 	
 	public SedimentaryBrick(String name) {
-		super(name, texName);
+		super(name, subtype, texName);
 	}
 }

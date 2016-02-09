@@ -12,19 +12,30 @@ import net.minecraft.util.IIcon;
 
 public class BasicItems extends Item {
 	protected IIcon[] iA;
-	protected String tN;
-	protected String ty;
-	protected String n;
+	protected String tN, ty, sTy, n;
 	
-	public BasicItems(CreativeTabs cT, String ty, String n, String tN) {
+	public BasicItems(CreativeTabs cT, String ty, String sTy, String n, String tN) {
         super();
         this.setHasSubtypes(true);
         this.setUnlocalizedName(n);
         this.setCreativeTab(cT);
         this.tN = tN;
         this.ty = ty;
+        this.sTy = sTy;
         this.n = n;
         iA = new IIcon[G.nTexForType(ty)];
+	}
+	
+	public String getName() {
+		return n;
+	}
+	
+	public String getType() {
+		return ty;
+	}
+	
+	public String getSubtype() {
+		return sTy;
 	}
 	
 	@Override

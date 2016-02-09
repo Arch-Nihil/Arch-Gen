@@ -7,6 +7,6 @@ public class IgneousDust extends BasicDust {
 	protected static String texName = G.texName + type + subtype;
 	
 	public IgneousDust(String name) {
-		super(name, texName);
+		super(name, subtype, texName);
 	}
 }

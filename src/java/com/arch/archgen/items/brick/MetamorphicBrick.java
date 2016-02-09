@@ -7,6 +7,6 @@ public class MetamorphicBrick extends BasicBrick {
 	protected static String texName = G.texName + type + subtype;
 	
 	public MetamorphicBrick(String name) {
-		super(name, texName);
+		super(name, subtype, texName);
 	}
 }

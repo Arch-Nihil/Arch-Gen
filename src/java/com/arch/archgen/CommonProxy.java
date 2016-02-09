@@ -4,6 +4,7 @@ import com.arch.archgen.blocks.BlocksRegistry;
 import com.arch.archgen.config.Config;
 import com.arch.archgen.items.ItemsRegistry;
 import com.arch.archgen.recipes.Crafting;
+import com.arch.archgen.recipes.Oredicting;
 import com.arch.archgen.recipes.Smelting;
 import com.arch.archgen.tabs.Tabs;
 import com.arch.archgen.world.Worldgen;
@@ -23,6 +24,7 @@ public class CommonProxy {
     }
 
     public void init(FMLInitializationEvent e) {
+    	Oredicting.init();
     	Crafting.init();
     	Smelting.init();
     }

@@ -125,8 +125,6 @@ public class Worldgen implements IWorldGenerator {
 			
 			getTopBlock(w, chunkX, chunkZ, b);
 			
-			maxHeight = Ints.max(topBlock);
-			
 			this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "absolute", 1, 20, 0, 0, 100);
 			this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "absolute", 1, 20, 0, 0, 100);
 			this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sand), w, r, chunkX, chunkZ, "absolute", 1, 24, 0, 0, 100);
@@ -215,6 +213,7 @@ public class Worldgen implements IWorldGenerator {
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 2, 25, -253, -49, 75);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 3, 26, -252, -50, 50);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 4, 27, -251, -51, 25);
+				maxHeight = Ints.max(topBlock);
 				if (maxHeight >= 96) {
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.diorite), w, r, chunkX, chunkZ, "relative", 23, 81, -153, -68, 100);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.diorite), w, r, chunkX, chunkZ, "relative", 23, 82, -152, -67, 75);

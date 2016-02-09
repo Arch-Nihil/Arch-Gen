@@ -7,6 +7,6 @@ public class SedimentaryDust extends BasicDust {
 	protected static String texName = G.texName + type + subtype;
 	
 	public SedimentaryDust(String name) {
-		super(name, texName);
+		super(name, subtype, texName);
 	}
 }

@@ -14,19 +14,32 @@ import net.minecraft.util.IIcon;
 
 public class BasicBlocks extends Block {
 	protected IIcon[] iA;
-	protected String tN;
-	protected String ty;
+	protected String tN, ty, sTy, n;
 	
-	protected BasicBlocks(Material m, CreativeTabs cT, String ty, String n, String tN, String t, float h, float r, int l) {
+	protected BasicBlocks(Material m, CreativeTabs cT, String ty, String sTy, String n, String tN, String t, float h, float r, int l) {
 		super(m);
 		this.setBlockName(n);
 		this.setCreativeTab(cT);
         this.setHardness(h);
         this.setResistance(r);
         this.setHarvestLevel(t, l);
+        this.n = n;
         this.tN = tN;
         this.ty = ty;
+        this.sTy = sTy;
         iA = new IIcon[G.nTexForType(ty)];
+	}
+	
+	public String getName() {
+		return n;
+	}
+	
+	public String getType() {
+		return ty;
+	}
+	
+	public String getSubtype() {
+		return sTy;
 	}
 	
 	@Override

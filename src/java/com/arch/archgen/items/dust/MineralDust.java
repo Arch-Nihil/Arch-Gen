@@ -7,6 +7,6 @@ public class MineralDust extends BasicDust {
 	protected static String texName = G.texName + type + subtype;
 	
 	public MineralDust(String name) {
-		super(name, texName);
+		super(name, subtype, texName);
 	}
 }

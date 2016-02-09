@@ -7,6 +7,6 @@ public class SedimentaryChunk extends BasicChunk {
 	protected static String texName = G.texName + type + subtype;
 	
 	public SedimentaryChunk(String name) {
-		super(name, texName);
+		super(name, subtype, texName);
 	}
 }

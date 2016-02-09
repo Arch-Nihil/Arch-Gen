@@ -7,6 +7,6 @@ public class MineralBrick extends BasicBrick {
 	protected static String texName = G.texName + type + subtype;
 	
 	public MineralBrick(String name) {
-		super(name, texName);
+		super(name, subtype, texName);
 	}
 }

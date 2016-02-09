@@ -7,8 +7,8 @@ import com.arch.archgen.tabs.Tabs;
 public class BasicBrick extends BasicItems {
 	protected static final String type = "Brick";
 	
-	public BasicBrick(String name, String tName) {
-		super(Tabs.tabBrick, type, name + type, tName + name);
+	public BasicBrick(String name, String sType, String tName) {
+		super(Tabs.tabBrick, type, sType, name + type, tName + name);
 		
 		G.brickArray.add(this);
 	}

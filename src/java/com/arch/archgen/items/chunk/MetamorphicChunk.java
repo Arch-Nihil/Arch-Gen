@@ -7,6 +7,6 @@ public class MetamorphicChunk extends BasicChunk {
 	protected static String texName = G.texName + type + subtype;
 	
 	public MetamorphicChunk(String name) {
-		super(name, texName);
+		super(name, subtype, texName);
 	}
 }
