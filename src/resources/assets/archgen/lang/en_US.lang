@@ -286,81 +286,81 @@ DiopsideBrickSmall.name=Small Diopside Brick
 DiopsideBrickMedium.name=Diopside Brick
 DiopsideBrickLarge.name=Large Diopside Brick
 
-GraniteStone-0.name=Raw Granite
-GraniteStone-1.name=Raw Granite
-GraniteStone-2.name=Raw Granite
+GraniteStone-0.name=Granite
+GraniteStone-1.name=Granite
+GraniteStone-2.name=Granite
 
 GraniteBricksSmall.name=Small Granite Bricks
 GraniteBricksMedium.name=Granite Bricks
 GraniteBricksLarge.name=Large Granite Bricks
 
-BasaltStone-0.name=Raw Basalt
-BasaltStone-1.name=Raw Basalt
-BasaltStone-2.name=Raw Basalt
+BasaltStone-0.name=Basalt
+BasaltStone-1.name=Basalt
+BasaltStone-2.name=Basalt
 
 BasaltBricksSmall.name=Small Basalt Bricks
 BasaltBricksMedium.name=Basalt Bricks
 BasaltBricksLarge.name=Large Basalt Bricks
 
-GabbroStone-0.name=Raw Gabbro
-GabbroStone-1.name=Raw Gabbro
-GabbroStone-2.name=Raw Gabbro
+GabbroStone-0.name=Gabbro
+GabbroStone-1.name=Gabbro
+GabbroStone-2.name=Gabbro
 
 GabbroBricksSmall.name=Small Gabbro Bricks
 GabbroBricksMedium.name=Gabbro Bricks
 GabbroBricksLarge.name=Large Gabbro Bricks
 
-DioriteStone-0.name=Raw Diorite
-DioriteStone-1.name=Raw Diorite
-DioriteStone-2.name=Raw Diorite
+DioriteStone-0.name=Diorite
+DioriteStone-1.name=Diorite
+DioriteStone-2.name=Diorite
 
 DioriteBricksSmall.name=Small Diorite Bricks
 DioriteBricksMedium.name=Diorite Bricks
 DioriteBricksLarge.name=Large Diorite Bricks
 
-PeridotiteStone-0.name=Raw Peridotite
-PeridotiteStone-1.name=Raw Peridotite
-PeridotiteStone-2.name=Raw Peridotite
+PeridotiteStone-0.name=Peridotite
+PeridotiteStone-1.name=Peridotite
+PeridotiteStone-2.name=Peridotite
 
 PeridotiteBricksSmall.name=Small Peridotite Bricks
 PeridotiteBricksMedium.name=Peridotite Bricks
 PeridotiteBricksLarge.name=Large Peridotite Bricks
 
-RhyoliteStone-0.name=Raw Rhyolite
-RhyoliteStone-1.name=Raw Rhyolite
-RhyoliteStone-2.name=Raw Rhyolite
+RhyoliteStone-0.name=Rhyolite
+RhyoliteStone-1.name=Rhyolite
+RhyoliteStone-2.name=Rhyolite
 
 RhyoliteBricksSmall.name=Small Rhyolite Bricks
 RhyoliteBricksMedium.name=Rhyolite Bricks
 RhyoliteBricksLarge.name=Large Rhyolite Bricks
 
-SiltstoneStone-0.name=Raw Siltstone
-SiltstoneStone-1.name=Raw Siltstone
-SiltstoneStone-2.name=Raw Siltstone
+SiltstoneStone-0.name=Siltstone
+SiltstoneStone-1.name=Siltstone
+SiltstoneStone-2.name=Siltstone
 
 SiltstoneBricksSmall.name=Small Siltstone Bricks
 SiltstoneBricksMedium.name=Siltstone Bricks
 SiltstoneBricksLarge.name=Large Siltstone Bricks
 
-LimestoneStone-0.name=Raw Limestone
-LimestoneStone-1.name=Raw Limestone
-LimestoneStone-2.name=Raw Limestone
+LimestoneStone-0.name=Limestone
+LimestoneStone-1.name=Limestone
+LimestoneStone-2.name=Limestone
 
 LimestoneBricksSmall.name=Small Limestone Bricks
 LimestoneBricksMedium.name=Limestone Bricks
 LimestoneBricksLarge.name=Large Limestone Bricks
 
-SandstoneStone-0.name=Raw Sandstone
-SandstoneStone-1.name=Raw Sandstone
-SandstoneStone-2.name=Raw Sandstone
+SandstoneStone-0.name=Sandstone
+SandstoneStone-1.name=Sandstone
+SandstoneStone-2.name=Sandstone
 
 SandstoneBricksSmall.name=Small Sandstone Bricks
 SandstoneBricksMedium.name=Sandstone Bricks
 SandstoneBricksLarge.name=Large Sandstone Bricks
 
-ShaleStone-0.name=Raw Shale
-ShaleStone-1.name=Raw Shale
-ShaleStone-2.name=Raw Shale
+ShaleStone-0.name=Shale
+ShaleStone-1.name=Shale
+ShaleStone-2.name=Shale
 
 ShaleBricksSmall.name=Small Shale Bricks
 ShaleBricksMedium.name=Shale Bricks
@@ -398,8 +398,13 @@ DiopsideBricksSmall.name=Small Diopside Bricks
 DiopsideBricksMedium.name=Diopside Bricks
 DiopsideBricksLarge.name=Large Diopside Bricks
 
+SandSoil-0.name=Sand
+SandSoil-1.name=Sand
+SandSoil-2.name=Sand
+
 itemGroup.DustTab=Arch-Gen : Dusts
 itemGroup.ChunkTab=Arch-Gen : Chunks
 itemGroup.BrickTab=Arch-Gen : Bricks
 itemGroup.BricksTab=Arch-Gen : Bricks
-itemGroup.StoneTab=Arch-Gen : Raw Stones
+itemGroup.StoneTab=Arch-Gen : Stones
+itemGroup.SoilTab=Arch-Gen : Soils

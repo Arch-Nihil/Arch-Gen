@@ -31,17 +31,26 @@ public class Worldgen implements IWorldGenerator {
 		int topBlockAverage;
 		topBlock = new int[256];
 		
-		topBlockAverage = (w.getTopSolidOrLiquidBlock(chunkX * 16 + 1, chunkZ * 16 + 1) + w.getTopSolidOrLiquidBlock(chunkX * 16 + 14, chunkZ * 16 + 1) + w.getTopSolidOrLiquidBlock(chunkX * 16 + 1, chunkZ * 16 + 14) + w.getTopSolidOrLiquidBlock(chunkX * 16 + 14, chunkZ * 16 + 14)) / 4;
-		for (int i = 0; i < 16; i ++) {
-			for (int k = 0; k < 16; k ++) {
-				topBlock[i * 16 + k] = topBlockAverage;
+		if (oceanicCheck == false) {
+			topBlockAverage = (w.getTopSolidOrLiquidBlock(chunkX * 16 + 1, chunkZ * 16 + 1) + w.getTopSolidOrLiquidBlock(chunkX * 16 + 14, chunkZ * 16 + 1) + w.getTopSolidOrLiquidBlock(chunkX * 16 + 1, chunkZ * 16 + 14) + w.getTopSolidOrLiquidBlock(chunkX * 16 + 14, chunkZ * 16 + 14)) / 4;
+			for (int i = 0; i < 16; i ++) {
+				for (int k = 0; k < 16; k ++) {
+					topBlock[i * 16 + k] = topBlockAverage;
+				}
 			}
-		}	
+		}
+		else {
+			for (int k = 0; k < 256; k ++) {
+				topBlock[k] = 64;
+			}
+		}
 		
 		for (int i = 0; i < 16; i ++) {
 			for (int k = 0; k < 16; k ++) {
-				checkAbove(w, chunkX, chunkZ, i, k);
-				checkAboveSmall(w, chunkX, chunkZ, i, k);
+				if (oceanicCheck == false) {
+					checkAbove(w, chunkX, chunkZ, i, k);
+					checkAboveSmall(w, chunkX, chunkZ, i, k);
+				}
 						
 				while (checkIfSolid(w.getBlock(chunkX * 16 + i, topBlock[i * 16 + k], chunkZ * 16 + k)) == false)
 					topBlock[i * 16 + k] --;
@@ -120,11 +129,13 @@ public class Worldgen implements IWorldGenerator {
 			
 			this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "absolute", 1, 20, 0, 0, 100);
 			this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "absolute", 1, 20, 0, 0, 100);
+			this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sand), w, r, chunkX, chunkZ, "absolute", 1, 24, 0, 0, 100);
 			
 			if (oceanicCheck) {
 				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "relative", 20, 0, -44, -8, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "relative", 44, 0, -44, 1, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "relative", 1, 20, -44, 1, 100);
+				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sand, Blocks.sand), w, r, chunkX, chunkZ, "absolute", 24, 64, 0, 0, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 1, 12, -63, -18, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 2, 13, -62, -19, 75);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 3, 14, -61, -20, 50);
@@ -133,7 +144,7 @@ public class Worldgen implements IWorldGenerator {
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.siltstone), w, r, chunkX, chunkZ, "relative", 32, 0, -6, -4, 75);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.siltstone), w, r, chunkX, chunkZ, "relative", 31, 0, -7, -5, 50);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.siltstone), w, r, chunkX, chunkZ, "relative", 30, 0, -8, -6, 25);
-				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.basalt), w, r, chunkX, chunkZ, "relative", 12, 64, -63, 1, 100);
+				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.basalt), w, r, chunkX, chunkZ, "relative", 12, 64, -51, 0, 100);
 				this.runCloudGen(new WorldgenSubstitute(BlocksRegistry.peridotite, BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 4, 8, 0, 0, 48, 12, 12, 2, 45, 32, 10);
 			}
 			else if (b.biomeName.equals("Beach")) {
@@ -143,6 +154,7 @@ public class Worldgen implements IWorldGenerator {
 				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "relative", 64, 0, -16, 0, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "relative", 64, 0, -16, 0, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "relative", 56, 0, -24, -8, 100);
+				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sand, Blocks.sand), w, r, chunkX, chunkZ, "absolute", 24, 112, 0, 0, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 1, 18, -74, -48, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 2, 19, -75, -49, 75);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 3, 20, -76, -50, 50);
@@ -167,9 +179,9 @@ public class Worldgen implements IWorldGenerator {
 				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "absolute", 20, 55, 0, 0, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "absolute", 1, 63, 0, 0, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "absolute", 20, 63, 0, 0, 100);
-				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "relative", 64, 0, -192, 0, 100);
-				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "relative", 64, 0, -192, 0, 100);
-				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "relative", 56, 0, -200, -8, 100);
+				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "relative", 63, 0, -191, 0, 100);
+				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "relative", 63, 0, -191, 0, 100);
+				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "relative", 55, 0, -191, -8, 100);
 				if (sandyCheck) {
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 44, 0, -76, 0, 100);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 43, 0, -77, -20, 75);
@@ -177,10 +189,11 @@ public class Worldgen implements IWorldGenerator {
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sandstone), w, r, chunkX, chunkZ, "relative", 41, 0, -79, -22, 25);
 				}
 				else if (swampyCheck) {
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.shale), w, r, chunkX, chunkZ, "relative", 51, 0, -10, -6, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.shale), w, r, chunkX, chunkZ, "relative", 51, 0, -10, -1, 100);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.shale), w, r, chunkX, chunkZ, "relative", 50, 0, -11, -9, 75);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.shale), w, r, chunkX, chunkZ, "relative", 49, 0, -12, -10, 50);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.shale), w, r, chunkX, chunkZ, "relative", 48, 0, -13, -11, 25);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.siltstone), w, r, chunkX, chunkZ, "relative", 59, 0, -1, 0, 100);
 				}
 				else if (isTopWater) {
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.shale), w, r, chunkX, chunkZ, "relative", 51, 0, -11, 0, 100);
@@ -202,27 +215,34 @@ public class Worldgen implements IWorldGenerator {
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 2, 25, -253, -49, 75);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 3, 26, -252, -50, 50);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "relative", 4, 27, -251, -51, 25);
-				if (maxHeight >= 82) {
+				if (maxHeight >= 96) {
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.diorite), w, r, chunkX, chunkZ, "relative", 23, 81, -153, -68, 100);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.diorite), w, r, chunkX, chunkZ, "relative", 23, 82, -152, -67, 75);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.diorite), w, r, chunkX, chunkZ, "relative", 24, 83, -151, -66, 50);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.diorite), w, r, chunkX, chunkZ, "relative", 24, 84, -150, -65, 25);
-					if (maxHeight >= 136) {
-						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 128, 0, -15, -1, 100);
-						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 127, 0, -16, -2, 75);
-						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 126, 0, -17, -3, 50);
-						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 125, 0, -18, -4, 25);
-						if (maxHeight >= 192)
-							this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.granite), w, r, chunkX, chunkZ, "relative", 64, 0, -192, 0, 100);
-						else
-							this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.granite), w, r, chunkX, chunkZ, "relative", 64, 0, -136, 0, 100);
+					if (maxHeight >= 144) {
+						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 136, 0, -15, -1, 100);
+						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 135, 0, -16, -2, 75);
+						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 134, 0, -17, -3, 50);
+						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.rhyolite), w, r, chunkX, chunkZ, "relative", 133, 0, -18, -4, 25);
+						if (maxHeight >= 192) {
+							this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sand, Blocks.sand), w, r, chunkX, chunkZ, "absolute", 64, 255, 0, 0, 100);
+							this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.granite), w, r, chunkX, chunkZ, "absolute", 64, 255, 0, 0, 100);
+						}
+						else {
+							this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sand, Blocks.sand), w, r, chunkX, chunkZ, "absolute", 64, 192, 0, 0, 100);
+							this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.granite), w, r, chunkX, chunkZ, "absolute", 64, 192, 0, 0, 100);
+						}
 					}
 					else
-						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.granite), w, r, chunkX, chunkZ, "relative", 64, 0, -73, 0, 100);
+						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sand, Blocks.sand), w, r, chunkX, chunkZ, "absolute", 64, 144, 0, 0, 100);
+						this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.granite), w, r, chunkX, chunkZ, "absolute", 64, 144, 0, 0, 100);
 				}
 				else {
-					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.granite), w, r, chunkX, chunkZ, "relative", 64, 82, -20, 0, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sand, Blocks.sand), w, r, chunkX, chunkZ, "absolute", 64, 96, 0, 0, 100);
+					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.granite), w, r, chunkX, chunkZ, "absolute", 64, 96, 0, 0, 100);
 				}
+				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sand, Blocks.sand), w, r, chunkX, chunkZ, "absolute", 24, 64, 0, 0, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.granite), w, r, chunkX, chunkZ, "absolute", 24, 64, 0, 0, 100);
 				this.runCloudGen(new WorldgenSubstitute(BlocksRegistry.peridotite, BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 4, 12, 0, 0, 64, 16, 16, 6, 60, 40, 4);
 			}
@@ -241,35 +261,28 @@ public class Worldgen implements IWorldGenerator {
 
 	private void runSubstituteGen(WorldGenerator gen, World w, Random rand, int chunkX, int chunkZ, String relativity, int minY, int maxY, int minRelativeY, int maxRelativeY, int chance) {
 		for (int i = 0; i < 16; i ++) {
-		   	int x = chunkX * 16 + i;
 		    for (int k = 0; k < 16; k ++) {
-		    	int z = chunkZ * 16 + k;
+		    	int min, max;
 		    	if (relativity == "relative") {
-			    	int topBlockY = topBlock[i * 16 + k];
-			    	int min, max;
 			    	if (maxY != 0)
-			    		max = Math.min(maxY, topBlockY + maxRelativeY);
+			    		max = Math.min(maxY, topBlock[i * 16 + k] + maxRelativeY);
 			    	else
-			    		max = topBlockY + maxRelativeY;
+			    		max = topBlock[i * 16 + k] + maxRelativeY;
 			    	if (minY != 0)
-			    		min = Math.max(minY - 1, topBlockY + minRelativeY - 1);
+			    		min = Math.max(minY - 1, topBlock[i * 16 + k] + minRelativeY - 1);
 			    	else
-			    		min = topBlockY + minRelativeY - 1;
-			    	for (int j = min; j < max; j ++) {
-				        int y = j;
-				   		if (w.rand.nextInt(100) < chance)
-				   			gen.generate(w, rand, x, y, z);
-			    	}
-		        }
-		    	else {
-		    		for (int j = minY; j < maxY; j ++) {
-				        int y = j;
-				   		if (w.rand.nextInt(100) < chance)
-				   			gen.generate(w, rand, x, y, z);
-		    		}
+			    		min = topBlock[i * 16 + k] + minRelativeY - 1;
 		    	}
-		   	}
-		}
+		    	else {
+		    		max = maxY;
+		    		min = minY;
+		    	}
+	    		for (int j = min; j < max; j ++) {
+			   		if (w.rand.nextInt(100) < chance)
+			   			gen.generate(w, rand, chunkX * 16 + i, j, chunkZ * 16 + k);
+	    		}
+	        }
+	   	}
 	}
 	
 	private void runCloudGen(WorldGenerator gen, World w, Random rand, int chunkX, int chunkZ, String relativity, int minY, int maxY, int minRelativeY, int maxRelativeY, int cSize, int cSizeY, int cSizeVar, int cSizeVarY, int innerC, int cDensity, int chance) {

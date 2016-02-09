@@ -26,5 +26,5 @@ public class WorldgenSubstitute extends WorldGenerator {
 			w.setBlock(x, y, z, this.block, w.rand.nextInt(3), 2);
 		}
 		return true;
-	};
+	}
 }

@@ -23,6 +23,7 @@ public class BasicStone extends BasicBlocks {
 	
 	public BasicStone(String name, String tName, String rDrop, String rWeight, float hard, float res, int lvl) {
 		super(G.mForType(type), Tabs.tabStone, type, name + type, tName + name, G.tForType(type), hard, res, lvl);
+		this.setStepSound(soundTypeStone);
 		
 		G.stoneArray.add(this);
 		

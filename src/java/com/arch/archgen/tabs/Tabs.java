@@ -7,10 +7,11 @@ import com.arch.archgen.items.ItemsRegistry;
 import net.minecraft.item.Item;
 
 public class Tabs {
-	public static BasicTab tabStone, tabDust, tabChunk, tabBricks, tabBrick;
+	public static BasicTab tabStone, tabSoil, tabDust, tabChunk, tabBricks, tabBrick;
 	
 	public static void preInit() {
 		tabStone = new BasicTab("StoneTab");
+		tabSoil = new BasicTab("SoilTab");
 		tabDust = new BasicTab("DustTab");
 		tabChunk = new BasicTab("ChunkTab");
 		
@@ -22,6 +23,7 @@ public class Tabs {
 	
 	public static void init() {
 		tabStone.setTabIcon(Item.getItemFromBlock(BlocksRegistry.granite));
+		tabSoil.setTabIcon(Item.getItemFromBlock(BlocksRegistry.sand));
 		tabDust.setTabIcon(ItemsRegistry.graniteDust);
 		tabChunk.setTabIcon(ItemsRegistry.graniteChunk);
 		

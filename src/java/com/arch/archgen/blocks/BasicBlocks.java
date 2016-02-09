@@ -24,7 +24,6 @@ public class BasicBlocks extends Block {
         this.setHardness(h);
         this.setResistance(r);
         this.setHarvestLevel(t, l);
-        this.setStepSound(soundTypeStone);
         this.tN = tN;
         this.ty = ty;
         iA = new IIcon[G.nTexForType(ty)];

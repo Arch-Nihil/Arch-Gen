@@ -3,6 +3,7 @@ package com.arch.archgen.blocks;
 import com.arch.archgen.blocks.bricks.IgneousBricks;
 import com.arch.archgen.blocks.bricks.MineralBricks;
 import com.arch.archgen.blocks.bricks.SedimentaryBricks;
+import com.arch.archgen.blocks.soil.BasicSoil;
 import com.arch.archgen.blocks.stone.IgneousStone;
 import com.arch.archgen.blocks.stone.SedimentaryStone;
 import com.arch.archgen.config.Config;
@@ -14,6 +15,8 @@ public class BlocksRegistry {
 	
 	public static Block granite, basalt, gabbro, diorite, peridotite, rhyolite;
 	public static Block siltstone, limestone, sandstone, shale;
+	
+	public static Block sand;
 	
 	public static Block graniteBricks, basaltBricks, gabbroBricks, dioriteBricks, peridotiteBricks, rhyoliteBricks;
 	public static Block siltstoneBricks, limestoneBricks, sandstoneBricks, shaleBricks;
@@ -31,6 +34,8 @@ public class BlocksRegistry {
 		GameRegistry.registerBlock(limestone = new SedimentaryStone("Limestone", "Calcite,Quartz,Plagioclase", "11,5,3", 8.0F, 8.0F, 1), BasicItemBlocks.class, "Limestone");
 		GameRegistry.registerBlock(sandstone = new SedimentaryStone("Sandstone", "Quartz,AlkaliFeldspar,Plagioclase", "11,7,5", 9.0F, 8.0F, 1), BasicItemBlocks.class, "Sandstone");
 		GameRegistry.registerBlock(shale = new SedimentaryStone("Shale", "Quartz,Plagioclase,AlkaliFeldspar,Calcite", "15,5,5,3", 8.0F, 8.0F, 1), BasicItemBlocks.class, "Shale");
+		
+		GameRegistry.registerBlock(sand = new BasicSoil("Sand", 6.0F, 6.0F), BasicItemBlocks.class, "Sand");
 		
 		if (Config.doGenBricks) {
 			GameRegistry.registerBlock(graniteBricks = new IgneousBricks("Granite", 10.0F, 10.0F, 1), BasicItemBlocks.class, "GraniteBricks");
