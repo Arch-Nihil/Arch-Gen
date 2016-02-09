@@ -2,6 +2,8 @@ package com.arch.archgen.lib;
 
 import java.util.ArrayList;
 
+import org.apache.commons.lang3.math.NumberUtils;
+
 import com.arch.archgen.blocks.bricks.BasicBricks;
 import com.arch.archgen.blocks.ore.BasicOre;
 import com.arch.archgen.blocks.soil.BasicSoil;
@@ -24,13 +26,15 @@ public class G {
 	public static ArrayList<BasicDust> dustArray = new ArrayList<BasicDust>();
 	public static ArrayList<BasicChunk> chunkArray = new ArrayList<BasicChunk>();
 	
+	public static final Block[] solidBArray = new Block[]{Blocks.dirt, Blocks.stone, Blocks.grass, Blocks.gravel, Blocks.sand, Blocks.sandstone, Blocks.stained_hardened_clay};
 	public static final String[] oceanicBArray = new String[]{"Ocean", "Deep Ocean", "FrozenOcean"};
-	public static final String[] sandyBArray = new String[]{"Desert", "Desert M", "Beach", "DesertHills", "Mesa", "Mesa (Bryce)", "Mesa Plateau", "Mesa Plateau F", "Mesa Plateau M", "Mesa Plateau F M"};
+	public static final String[] sandyBArray = new String[]{"Desert", "Desert M", "DesertHills", "Mesa", "Mesa (Bryce)", "Mesa Plateau", "Mesa Plateau F", "Mesa Plateau M", "Mesa Plateau F M"};
+	public static final String[] swampyBArray = new String[]{"Swampland", "Swampland M", "MushroomIsland"};
 	
 	public static final String[] sizeArray = new String[]{"Tiny", "Small", "Medium", "Large", "Huge"};
+	public static final int maxBArraySize = NumberUtils.max(oceanicBArray.length, sandyBArray.length, swampyBArray.length);
 	public static String texName = Strings.MODID + ":";
 	public static final int bWeight = 81;
-	public static final Block[] solidBArray = new Block[]{Blocks.dirt, Blocks.grass, Blocks.stone, Blocks.gravel, Blocks.sand, Blocks.sandstone, Blocks.stained_hardened_clay};
 	
 	public static int nTexForType(String type) {
 		switch (type) {
