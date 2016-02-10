@@ -7,7 +7,7 @@ import net.minecraftforge.common.config.Property;
 
 public class Config {
 	
-	public static boolean doGenBricks, doGenMachines, doGenExtra;
+	public static boolean doGenBricks, doGenMachines, doGenExtra, doRemoveBedrock;
 	public static int magicNumberOne, magicNumberTwo;
 	
 	public static void init(FMLPreInitializationEvent e) {
@@ -28,6 +28,10 @@ public class Config {
 		Property genExtra = bConfig.get(Configuration.CATEGORY_GENERAL, "GenExtraChecks", false);
 		genExtra.comment = "Should the mod attempt extra checks to better detect its environment ?";
 		doGenExtra = genExtra.getBoolean();
+		
+		Property removeBedrock = bConfig.get(Configuration.CATEGORY_GENERAL, "RemoveBedrock", true);
+		removeBedrock.comment = "Should the mod remove all unecessary bedrock ?";
+		doRemoveBedrock = removeBedrock.getBoolean();
 		
 		Property numberOne = bConfig.get(Configuration.CATEGORY_GENERAL, "MagicNumberOne", "6");
 		numberOne.comment = "Number affecting world-gen. Up to make detection of top block more accurate at the cost of world-gen speed.";
