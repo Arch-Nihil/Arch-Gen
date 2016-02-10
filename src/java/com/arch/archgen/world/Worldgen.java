@@ -159,6 +159,7 @@ public class Worldgen implements IWorldGenerator {
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.siltstone), w, r, chunkX, chunkZ, "relative", 31, 0, -7, -5, 50);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.siltstone), w, r, chunkX, chunkZ, "relative", 30, 0, -8, -6, 25);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.basalt), w, r, chunkX, chunkZ, "relative", 12, 64, -51, 0, 100);
+				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.granite), w, r, chunkX, chunkZ, "relative", 64, 0, -32, 0, 100);
 				this.runCloudGen(new WorldgenSubstitute(BlocksRegistry.peridotite, BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 4, 8, 0, 0, 48, 12, 12, 2, 7, 16);
 			}
 			else if (b.biomeName.equals("Beach")) {
