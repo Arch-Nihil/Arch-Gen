@@ -7,7 +7,7 @@ import net.minecraftforge.common.config.Property;
 
 public class Config {
 	
-	public static boolean doGenBricks, doGenMachines, doGenExtra, doRemoveBedrock;
+	public static boolean doGen, doGenBricks, doGenMachines, doGenExtra, doRemoveBedrock, doStripper;
 	public static int magicNumberOne, magicNumberTwo;
 	
 	public static void init(FMLPreInitializationEvent e) {
@@ -16,6 +16,10 @@ public class Config {
 		Configuration bConfig = new Configuration(cLocation);
 		
 		bConfig.load();
+		
+		Property worldGen = bConfig.get(Configuration.CATEGORY_GENERAL, "WorldGen", true);
+		worldGen.comment = "Should the mod generate anything at all ? Blocks will still get added.";
+		doGen = worldGen.getBoolean();
 		
 		Property genBricks = bConfig.get(Configuration.CATEGORY_GENERAL, "GenerateBricks", true);
 		genBricks.comment = "Should the mod generate bricks based on the many stones and minerals available ?";
@@ -32,6 +36,10 @@ public class Config {
 		Property removeBedrock = bConfig.get(Configuration.CATEGORY_GENERAL, "RemoveBedrock", true);
 		removeBedrock.comment = "Should the mod remove all unecessary bedrock ?";
 		doRemoveBedrock = removeBedrock.getBoolean();
+		
+		Property stripper = bConfig.get(Configuration.CATEGORY_GENERAL, "StripperMode", true);
+		stripper.comment = "Should the mod register its world stripping functions ?";
+		doStripper = stripper.getBoolean();
 		
 		Property numberOne = bConfig.get(Configuration.CATEGORY_GENERAL, "MagicNumberOne", "6");
 		numberOne.comment = "Number affecting world-gen. Up to make detection of top block more accurate at the cost of world-gen speed.";
