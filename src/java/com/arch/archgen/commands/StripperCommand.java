@@ -28,8 +28,8 @@ public class StripperCommand implements ICommand {
 			for (int i = 0; i < G.stoneArray.size(); i ++) {
 				bList.add(G.stoneArray.get(i));
 			}
-			for (int i = 0; i < G.soilArray.size(); i ++) {
-				bList.add(G.soilArray.get(i));
+			for (int i = 0; i < G.sandArray.size(); i ++) {
+				bList.add(G.sandArray.get(i));
 			}
 		}
 		bList.add(Blocks.stone);

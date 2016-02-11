@@ -168,7 +168,7 @@ public class Worldgen implements IWorldGenerator {
 				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.dirt), w, r, chunkX, chunkZ, "relative", 20, 0, -44, -8, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.sandstone), w, r, chunkX, chunkZ, "relative", 44, 0, -44, 1, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(Blocks.stone, Blocks.gravel), w, r, chunkX, chunkZ, "relative", 1, 20, -44, 1, 100);
-				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sand, Blocks.sand), w, r, chunkX, chunkZ, "absolute", 24, 64, 0, 0, 100);
+				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sand, Blocks.sand), w, r, chunkX, chunkZ, "absolute", 24, 72, 0, 0, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 1, 12, 0, 0, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 2, 13, 0, 0, 75);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 3, 14, 0, 0, 50);
@@ -294,7 +294,7 @@ public class Worldgen implements IWorldGenerator {
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sand, Blocks.sand), w, r, chunkX, chunkZ, "absolute", 64, 96, 0, 0, 100);
 					this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.granite), w, r, chunkX, chunkZ, "absolute", 64, 96, 0, 0, 100);
 				}
-				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sand, Blocks.sand), w, r, chunkX, chunkZ, "absolute", 24, 64, 0, 0, 100);
+				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.sand, Blocks.sand), w, r, chunkX, chunkZ, "absolute", 24, 72, 0, 0, 100);
 				this.runSubstituteGen(new WorldgenSubstitute(BlocksRegistry.granite), w, r, chunkX, chunkZ, "absolute", 24, 64, 0, 0, 100);
 				this.runCloudGen(new WorldgenSubstitute(BlocksRegistry.peridotite, BlocksRegistry.gabbro), w, r, chunkX, chunkZ, "absolute", 4, 12, 0, 0, 64, 24, 16, 6, 4, 12);
 			}

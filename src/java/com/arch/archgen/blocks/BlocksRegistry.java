@@ -1,26 +1,27 @@
 package com.arch.archgen.blocks;
 
+import com.arch.archgen.blocks.bricks.BasicBricks;
 import com.arch.archgen.blocks.bricks.IgneousBricks;
 import com.arch.archgen.blocks.bricks.MineralBricks;
 import com.arch.archgen.blocks.bricks.SedimentaryBricks;
 import com.arch.archgen.blocks.soil.BasicSand;
+import com.arch.archgen.blocks.stone.BasicStone;
 import com.arch.archgen.blocks.stone.IgneousStone;
 import com.arch.archgen.blocks.stone.SedimentaryStone;
 import com.arch.archgen.config.Config;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
 
 public class BlocksRegistry {
 	
-	public static Block granite, basalt, gabbro, diorite, peridotite, rhyolite;
-	public static Block siltstone, limestone, sandstone, shale;
+	public static BasicStone granite, basalt, gabbro, diorite, peridotite, rhyolite;
+	public static BasicStone siltstone, limestone, sandstone, shale;
 	
-	public static Block sand;
+	public static BasicSand sand;
 	
-	public static Block graniteBricks, basaltBricks, gabbroBricks, dioriteBricks, peridotiteBricks, rhyoliteBricks;
-	public static Block siltstoneBricks, limestoneBricks, sandstoneBricks, shaleBricks;
-	public static Block quartzBricks, alkaliFeldsparBricks, plagioclaseBricks, hornblendeBricks, calciteBricks, olivineBricks, enstatiteBricks, diopsideBricks;
+	public static BasicBricks graniteBricks, basaltBricks, gabbroBricks, dioriteBricks, peridotiteBricks, rhyoliteBricks;
+	public static BasicBricks siltstoneBricks, limestoneBricks, sandstoneBricks, shaleBricks;
+	public static BasicBricks quartzBricks, alkaliFeldsparBricks, plagioclaseBricks, hornblendeBricks, calciteBricks, olivineBricks, enstatiteBricks, diopsideBricks;
 	
 	public static void init() {
 		GameRegistry.registerBlock(granite = new IgneousStone("Granite", "Quartz,AlkaliFeldspar,Plagioclase,Hornblende", "9,7,3,1", 13.0F, 10.0F, 2), BasicItemBlocks.class, "Granite");

@@ -1,6 +1,7 @@
 package com.arch.archgen.recipes;
 
 import com.arch.archgen.blocks.BasicBlocks;
+import com.arch.archgen.blocks.soil.BasicSand;
 import com.arch.archgen.config.Config;
 import com.arch.archgen.items.BasicItems;
 import com.arch.archgen.lib.G;
@@ -11,6 +12,7 @@ import net.minecraftforge.oredict.OreDictionary;
 public class Oredicting {
 	private static BasicItems cItem;
 	private static BasicBlocks cBlock;
+	private static BasicSand cSand;
 	private static ItemStack cIStack;
 	
 	public static void init() {
@@ -46,12 +48,12 @@ public class Oredicting {
 			}
 		}
 		
-		for (int i = 0; i < G.soilArray.size(); i ++) {
-			cBlock = G.soilArray.get(i);
-			for (int n = 0; n < G.mAmountForType(cBlock.getType()); n ++) {
-				cIStack = new ItemStack(G.soilArray.get(i), 1, n);
-				OreDictionary.registerOre(cBlock.getType().toLowerCase() + cBlock.getName().replace("Soil", ""), cIStack);
-				OreDictionary.registerOre(cBlock.getType().toLowerCase() + cBlock.getSubtype() + cBlock.getName().replace("Soil", ""), cIStack);
+		for (int i = 0; i < G.sandArray.size(); i ++) {
+			cSand = G.sandArray.get(i);
+			for (int n = 0; n < G.mAmountForType(cSand.getType()); n ++) {
+				cIStack = new ItemStack(G.sandArray.get(i), 1, n);
+				OreDictionary.registerOre(cSand.getType().toLowerCase() + cSand.getName().replace("Soil", ""), cIStack);
+				OreDictionary.registerOre(cSand.getType().toLowerCase() + cSand.getSubtype() + cSand.getName().replace("Soil", ""), cIStack);
 				OreDictionary.registerOre("sand", cIStack);
 			}
 		}

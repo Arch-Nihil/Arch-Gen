@@ -6,7 +6,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 
 import com.arch.archgen.blocks.bricks.BasicBricks;
 import com.arch.archgen.blocks.ore.BasicOre;
-import com.arch.archgen.blocks.soil.BasicSoil;
+import com.arch.archgen.blocks.soil.BasicSand;
 import com.arch.archgen.blocks.stone.BasicStone;
 import com.arch.archgen.items.brick.BasicBrick;
 import com.arch.archgen.items.chunk.BasicChunk;
@@ -18,7 +18,7 @@ import net.minecraft.init.Blocks;
 
 public class G {
 	public static ArrayList<BasicBricks> bricksArray = new ArrayList<BasicBricks>();
-	public static ArrayList<BasicSoil> soilArray = new ArrayList<BasicSoil>();
+	public static ArrayList<BasicSand> sandArray = new ArrayList<BasicSand>();
 	public static ArrayList<BasicStone> stoneArray = new ArrayList<BasicStone>();
 	public static ArrayList<BasicOre> oreArray = new ArrayList<BasicOre>();
 	
