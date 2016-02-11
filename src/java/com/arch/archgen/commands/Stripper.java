@@ -17,7 +17,7 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 
-public class StripperCommand implements ICommand {
+public class Stripper implements ICommand {
 	private List alias;
 	public static final LinkedList<Block> bList = new LinkedList<Block>();
 	private Block b;
@@ -67,7 +67,7 @@ public class StripperCommand implements ICommand {
 		bList.add(Blocks.end_stone);
 	}
 	
-	public StripperCommand()
+	public Stripper()
 	{
 		this.alias = new ArrayList();
 	    this.alias.add("stripper");
@@ -92,15 +92,15 @@ public class StripperCommand implements ICommand {
 	@Override
 	public void processCommand(ICommandSender cSender, String[] par) {
 		if (par.length > 2 || par.length < 1) {
-			cSender.addChatMessage(new ChatComponentText("Invalid arguments. Only one parameter is allowed."));
+			cSender.addChatMessage(new ChatComponentText("Invalid arguments. Only one or two parameters are allowed."));
 			return;
 		}
 		else if (!par[0].matches("\\d+")) {
-			cSender.addChatMessage(new ChatComponentText("Invalid arguments. Must be a number."));
+			cSender.addChatMessage(new ChatComponentText("Invalid arguments. First parameter must be a number."));
 			return;
 		}
-		else if (Integer.parseInt(par[0].toString()) > 128 || Integer.parseInt(par[0].toString()) < 1) {
-			cSender.addChatMessage(new ChatComponentText("Invalid arguments. Number must be positive and below 128."));
+		else if (Integer.parseInt(par[0].toString()) > 100 || Integer.parseInt(par[0].toString()) < 1) {
+			cSender.addChatMessage(new ChatComponentText("Invalid arguments. Number must be positive and no more than 100."));
 			return;
 		}
 		else {
@@ -108,7 +108,6 @@ public class StripperCommand implements ICommand {
 			if (cSender instanceof EntityPlayer) {
 				EntityPlayer p = (EntityPlayer) cSender;
 				World w = DimensionManager.getWorld(p.dimension);
-				System.out.println("Started stripping.");
 				range = Integer.parseInt(par[0].toString());
 				if (par.length != 1 && par[1] == "x")
 					rangeUp = range;
@@ -123,7 +122,6 @@ public class StripperCommand implements ICommand {
 						}
 					}
 				}
-				System.out.println("Done stripping.");
 			}
 			cSender.addChatMessage(new ChatComponentText("Stripping over. Hope you enjoyed."));
 		}
